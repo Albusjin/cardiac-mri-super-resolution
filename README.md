@@ -1,3 +1,9 @@
+> **使用提示：** 完整研究资料目前保存在本仓库的 [cardiac-mri-project-transfer.zip](cardiac-mri-project-transfer.zip) 中。下方指向子目录的链接在解压前不能直接从 GitHub 网页打开。要在 Codex 云端继续，请先选择本仓库并发送：
+>
+> “请在当前工作环境解压 cardiac-mri-project-transfer.zip，先读取 AGENTS.md、HANDOFF.md、科研工作台/项目状态.md，然后继续帮助我推进心脏 MRI 超分辨项目。”
+>
+> 解压只准备当前环境，后续要把展开后的文件提交到 GitHub，请检查变更后再提交。
+
 # 心脏 Cine MRI 超分辨率研究工作台
 
 整理日期：**2026-10-29（Asia/Shanghai）**。本仓库用于跨设备保存研究上下文、方案、论文阅读、基线筛选和已有证据。
