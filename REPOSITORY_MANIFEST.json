@@ -1,0 +1,596 @@
+{
+  "version": 1,
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 317,
+      "sha256": "69ec9066e9a3872a9a3960a41735dab35842ac03387c49e8513c8a7b705ded25"
+    },
+    {
+      "path": "00_从这里开始.html",
+      "bytes": 5903,
+      "sha256": "ee801a5c8ca037589d0516f5b1578eb2a3e7cc7856c4e2224a735f82dffd331e"
+    },
+    {
+      "path": "00_从这里开始.md",
+      "bytes": 3317,
+      "sha256": "dfe08ffb365e8ccb664abfeda152912830a6fa25d02410805f9d136d309a7b6d"
+    },
+    {
+      "path": "01_工作全景与方法.html",
+      "bytes": 6042,
+      "sha256": "23ebade9ab575b83a6f51692d8cf5b457dc062a85054f1de668805f9492acca0"
+    },
+    {
+      "path": "01_工作全景与方法.md",
+      "bytes": 3788,
+      "sha256": "0bf60595245b3ca4583284d941f7e1d6cb8f193bf60222c70fbbdf738ea7eee1"
+    },
+    {
+      "path": "02_最新结果与证据.html",
+      "bytes": 8154,
+      "sha256": "682ba476f9ea541e3ec3e9819ad268c2cc53a63cf72ff91da3d2d2b809c80ac8"
+    },
+    {
+      "path": "02_最新结果与证据.md",
+      "bytes": 5037,
+      "sha256": "202a97a76f8ebcfd491194cfdc4f4be4ab3940a02bd22894d2dfc562ae1a0f03"
+    },
+    {
+      "path": "03_数据与评价口径.html",
+      "bytes": 6751,
+      "sha256": "80db19e466d3c8b30274bee9c8712b059d7f85f52dea1d070a18abf32b84d894"
+    },
+    {
+      "path": "03_数据与评价口径.md",
+      "bytes": 4315,
+      "sha256": "8baeff5053c3a41838a49bd18c50ad9038b9333ac364b3bc01da980b1f1f28b5"
+    },
+    {
+      "path": "04_代码地图与环境.html",
+      "bytes": 7697,
+      "sha256": "544904516d02e6da15922ded949b1252b49742cb7c0c2c66d89a488704e7bbc6"
+    },
+    {
+      "path": "04_代码地图与环境.md",
+      "bytes": 4744,
+      "sha256": "ad5865e74c02fee5577229f8f88fb812c9b36c6b26230de5b3c815ca53217df1"
+    },
+    {
+      "path": "05_新人第一周建议.html",
+      "bytes": 4853,
+      "sha256": "0e6542f0c0db6bdffba93ecc2206b619b30c2e7a80ab80f6cd6c99d304b069a4"
+    },
+    {
+      "path": "05_新人第一周建议.md",
+      "bytes": 2683,
+      "sha256": "abfab9ec1ab5f4a5757353c718b548bd7b96a16a414482bc2f2a9eba1a4af91b"
+    },
+    {
+      "path": "06_问题与后续方向.html",
+      "bytes": 4705,
+      "sha256": "d0a221f94831aa2a6e4f5b0426eed4f583a67747245403182a25cc38cbc7b08b"
+    },
+    {
+      "path": "06_问题与后续方向.md",
+      "bytes": 2595,
+      "sha256": "28e3e9fc6c6c5643e58e7b4229ec32cc906a96a39942689409bd51109e9ca513"
+    },
+    {
+      "path": "07_论文与证据来源.html",
+      "bytes": 6376,
+      "sha256": "91d46cfc4f7216c409331444c47bd351b83e581904e6eb9cb602f04b5c4c2f4c"
+    },
+    {
+      "path": "07_论文与证据来源.md",
+      "bytes": 3761,
+      "sha256": "4f3209f67511183ae10762327287ad229ae63769327c2ce354f7e8c23f293c6c"
+    },
+    {
+      "path": "08_资料包说明与使用范围.html",
+      "bytes": 4298,
+      "sha256": "3cb1e2c88dcf6499ae9209d27ed91e83356b7f5813a462917e83771a113bdfda"
+    },
+    {
+      "path": "08_资料包说明与使用范围.md",
+      "bytes": 2313,
+      "sha256": "fbc3c692031b712ffa1eb8c98f4f6828c080a53b36ea017b39495c61c9688ea4"
+    },
+    {
+      "path": "09_十分钟介绍提纲.html",
+      "bytes": 3855,
+      "sha256": "421612e8cf384737155c5e3d913f46e8b9bddb5d576ae475d5b67a6f9bb0306d"
+    },
+    {
+      "path": "09_十分钟介绍提纲.md",
+      "bytes": 1682,
+      "sha256": "d37cd947a0e8b20a7394739987be675d0eb4afb6ca45906251a2ac47da8aa482"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2544,
+      "sha256": "3ba12e32d5d5829e1fcbf89b619ea68e9ceb6c91a609f15f1bb076375a15d4bf"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 4458,
+      "sha256": "dbd1f1e4229a372177ae9e12fc206006bd78d54384c7e7b5d6d8ec702754ac32"
+    },
+    {
+      "path": "LICENSE_DATA.html",
+      "bytes": 3198,
+      "sha256": "2e95752375299617eb9fc07a9c2caba0b983c43eaabd860512365dc4e481d219"
+    },
+    {
+      "path": "LICENSE_DATA.md",
+      "bytes": 1337,
+      "sha256": "e3a26f8e8048bad7e84f046b55a44c5eec8551daba5de830db87b34065976cd6"
+    },
+    {
+      "path": "MANIFEST.csv",
+      "bytes": 4282,
+      "sha256": "d9cb0b6e5957215a180c3b04809cab1ecc120646ca397159744dff451b8f2881"
+    },
+    {
+      "path": "Nature Skills 中文使用指南.md",
+      "bytes": 45470,
+      "sha256": "42bf18eefde4bff13d08ace170611bc27a085c3fe3220a0f372fb90f44b60f8c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5345,
+      "sha256": "ea6c0da2fc08dd646b6a5cc24b045c3f113b930ae6ae3bb13b60e9e010b2293a"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 554,
+      "sha256": "792db19cb5ea59206ffe9fea2d97222b2fe84d4ca044ec36ed846fb46eb4b806"
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "bytes": 4122,
+      "sha256": "9c39ad577c0194b448fdec827476b6d470bdc2aadc44983845fab744aa66c7d2"
+    },
+    {
+      "path": "assets/acdc_cine.gif",
+      "bytes": 2533430,
+      "sha256": "00ad60074e2c2f47ab580ab6fcd78639cb18178f0033cf18c504ff0df9b5a9c3"
+    },
+    {
+      "path": "assets/acdc_reconstruction.png",
+      "bytes": 343024,
+      "sha256": "8bffbf9722aeaceb784964d1dbdcb7f16a2b744f3b5dd5b6389283b6cd43cef1"
+    },
+    {
+      "path": "assets/acdc_results.png",
+      "bytes": 136842,
+      "sha256": "bf319fb9961065e8fd31ef6b7654993c7c3d475ab9a6fda6f58c994234c1eddc"
+    },
+    {
+      "path": "assets/ixi_stage2_validation.png",
+      "bytes": 113719,
+      "sha256": "8f1a79b9795c8546047929ada806ff30a5a0b920fd93d1a408afb76efb4b209f"
+    },
+    {
+      "path": "assets/research_map.png",
+      "bytes": 289354,
+      "sha256": "580d5b25c8cc6fe421db73dc1bbd4cf7547c063e557c312a0f6b434b2b6b4ce2"
+    },
+    {
+      "path": "assets/style.css",
+      "bytes": 3447,
+      "sha256": "98f526e587b5f935e2674177697f8a67f936f60d177875ec04c1b77dd23b657b"
+    },
+    {
+      "path": "configs/ixi_stage1_reference.yml",
+      "bytes": 2755,
+      "sha256": "1a186c4b511365e60a8146f806616d1e01a190b518fc8885b36cf66503b4bc5b"
+    },
+    {
+      "path": "configs/ixi_stage2_reference.yml",
+      "bytes": 2825,
+      "sha256": "912bebdf09b1f3d82f19794e2b42b5985a793345e1a579a1c2060975203644a3"
+    },
+    {
+      "path": "docs/云端与跨设备使用.md",
+      "bytes": 2239,
+      "sha256": "95f86bbd2770b626a3048cd01f8a048376d3abb7625a20ee2f0646114c5f3858"
+    },
+    {
+      "path": "docs/归档范围与来源.md",
+      "bytes": 1977,
+      "sha256": "980383adab60726eb586fff9616ec037184ca4b021abab1983cdf8726375cff6"
+    },
+    {
+      "path": "evidence/acdc_test_aggregate.csv",
+      "bytes": 325,
+      "sha256": "51e51f6db0f4a645828c462e0e7b5df451400e557dfac4a80913d4255e94b56d"
+    },
+    {
+      "path": "evidence/dual_gpu_full_input_check.json",
+      "bytes": 663,
+      "sha256": "c2f78cca9cb9452fd6cf852929b5b7767e1927ddac63502b95a57e9c3e3e00f0"
+    },
+    {
+      "path": "evidence/environment_reference.json",
+      "bytes": 748,
+      "sha256": "04bbf6574a46ae2d552e6d9e4ac6549aae9336b725096d08687f26dbdf673dc0"
+    },
+    {
+      "path": "evidence/flowgs_aid_test_aggregate.csv",
+      "bytes": 181,
+      "sha256": "16ed7266952e4c380c26a8babb1cee165d47098dbfde12775cc1d5d15762d6f4"
+    },
+    {
+      "path": "evidence/ixi_config_fidelity.json",
+      "bytes": 370,
+      "sha256": "53a0a5170f2ebbb1459a940836a4c128a626a7160c1c5c4fd6443d4f2bdc3703"
+    },
+    {
+      "path": "evidence/ixi_stage2_validation_x4.csv",
+      "bytes": 582,
+      "sha256": "aff605007167650f7ff1ba90f369285c88f777aa5a07d1879c071dbd42a2d8d2"
+    },
+    {
+      "path": "evidence/ixi_training_snapshot.json",
+      "bytes": 1425,
+      "sha256": "cb167c12bdd7a9cd4c48d77f475708279c84246c8e96748335dc7ebd79c17d86"
+    },
+    {
+      "path": "evidence/source_index.json",
+      "bytes": 3101,
+      "sha256": "d8e5facd71a2f3bd3861f1889ab9e2afb0ce0535ec4361b6e3fa168d141dd776"
+    },
+    {
+      "path": "index.html",
+      "bytes": 5918,
+      "sha256": "19f79f830d51789a003503217182c4467a0632ada756eed4f56d8036a470f3ec"
+    },
+    {
+      "path": "nature-skills安装核验.json",
+      "bytes": 2429,
+      "sha256": "2a1f49c55f90772969d6cd5c91fd0c23888d3ddbb82a79159a919215b1dc486d"
+    },
+    {
+      "path": "nature-skills安装源清单.json",
+      "bytes": 134199,
+      "sha256": "c563a9347a3b07df0eaf6200bb282f726225b7948b1024651dfa0ddd5db23423"
+    },
+    {
+      "path": "tools/check_package.py",
+      "bytes": 2315,
+      "sha256": "2f44ce907759dee9688330ce02f340ebb91d2b68b0f946739434c73fedadf9a0"
+    },
+    {
+      "path": "tools/read_snapshot.py",
+      "bytes": 1493,
+      "sha256": "c51eb3231e9cb2132bf8a745b140392ddd7e2b17ff67674f2acd5bc92de0fccf"
+    },
+    {
+      "path": "tools/verify_repository.py",
+      "bytes": 3025,
+      "sha256": "c8b40edc3169e4bb9442af2ae3793639669b646f3d4c91e168f97c1ec6b339ff"
+    },
+    {
+      "path": "完整阅读.html",
+      "bytes": 43954,
+      "sha256": "d04a3380ac9e41afbf9d8fa7d302f9eb85f75a508b830ff93bb0afb4cf46941f"
+    },
+    {
+      "path": "科研工作台/交接/基线与ACDC测试定位说明.md",
+      "bytes": 9425,
+      "sha256": "215602c26c5d22b0e13d1dccbc2eefa357d105ee3fd4ee0eb91150b69ce47ba6"
+    },
+    {
+      "path": "科研工作台/交接/项目目标与数据集讨论归档.md",
+      "bytes": 17340,
+      "sha256": "b320a92299f51366002dda5547112bc89f1b821d5380b484ceab40b7d5650dc5"
+    },
+    {
+      "path": "科研工作台/使用说明.md",
+      "bytes": 5148,
+      "sha256": "d16d75a300b94357c03d7ba93dc5d5f4fb7b50ae12f8c514fda28b4cd3f23203"
+    },
+    {
+      "path": "科研工作台/基线选型/GaussM2ASR评估_2026-10-28/GaussM2ASR_CVPR2026_原文.pdf",
+      "bytes": 3477310,
+      "sha256": "43d5e0b38d9c8e30a45228250a9ce75ec030fba39d13cbd569518e74de990790"
+    },
+    {
+      "path": "科研工作台/基线选型/GaussM2ASR评估_2026-10-28/GaussM2ASR_CVPR2026_补充材料.pdf",
+      "bytes": 8467426,
+      "sha256": "72060d4a58cb1765c22a9fa9b103cb5d0814b5c8da0ab3e7396613ae5000a0cc"
+    },
+    {
+      "path": "科研工作台/基线选型/GaussM2ASR评估_2026-10-28/GaussM2ASR_评估与基线建议.md",
+      "bytes": 27129,
+      "sha256": "bbfc6ebe6ada7b3b8986deb836fb4a7dd60525f7485ae15e443a4adfbac09267"
+    },
+    {
+      "path": "科研工作台/基线选型/GaussM2ASR评估_2026-10-28/Reviewer_1_冻结.md",
+      "bytes": 4846,
+      "sha256": "0d70ae4a28c37a5c74bfb2accfdca92133c5a731032d980eae1e7053e3ee6a62"
+    },
+    {
+      "path": "科研工作台/基线选型/GaussM2ASR评估_2026-10-28/Reviewer_2_冻结.md",
+      "bytes": 5644,
+      "sha256": "b29110ee5287e7df5a07ee9bec0b2aa723189bad6b1b6e3b5e56359b5664abfd"
+    },
+    {
+      "path": "科研工作台/基线选型/GaussM2ASR评估_2026-10-28/Reviewer_3_冻结.md",
+      "bytes": 5040,
+      "sha256": "31f960da9d1696380687f00b63a41f0b73eeed3ec3ffa7e6593ff85bcd9f80d3"
+    },
+    {
+      "path": "科研工作台/基线选型/GaussM2ASR评估_2026-10-28/复核审计.json",
+      "bytes": 8349,
+      "sha256": "2c1ad227e94fe73ec970b26e7e19402bdb185c5bb85f71819d6451d9c08ddab8"
+    },
+    {
+      "path": "科研工作台/基线选型/GaussM2ASR评估_2026-10-28/来源与版本.json",
+      "bytes": 1836,
+      "sha256": "121324e2f4fee5ac5f823abbcb8e596b9cea40a40074815d4bf0a8b5515f71ff"
+    },
+    {
+      "path": "科研工作台/基线选型/仓库核查记录_2026-10-28.json",
+      "bytes": 29170,
+      "sha256": "08e50ab3c4fdf0fe42f0d515c694eec9e7f3e59823e6344c6a3138ebd9987b29"
+    },
+    {
+      "path": "科研工作台/基线选型/候选基线_2026-10-28.csv",
+      "bytes": 29681,
+      "sha256": "4ee4e96cb0e6d47b061c7ec5d5d23b1b491bcb3b6fda81e7076cd9754a8dbf01"
+    },
+    {
+      "path": "科研工作台/基线选型/开发与对比基线初筛_2026-10-28.md",
+      "bytes": 52011,
+      "sha256": "9aea8cf16811ee4bb774b16e9c0d59c4b8f338a3ddfad4d33b909bd6431797c3"
+    },
+    {
+      "path": "科研工作台/基线选型/心脏MRI研究对比_原表.xlsx",
+      "bytes": 9430,
+      "sha256": "d03d8c98384ed78cddb5c92f5076cd5a07ce89ffcd8c1f4fe0727f0066429c3c"
+    },
+    {
+      "path": "科研工作台/基线选型/早期相关文献检索讨论归档_2026-10-28.md",
+      "bytes": 9434,
+      "sha256": "270500f2a79b1c87327e11cf825e752657522113a79f71bad864f050d392cae8"
+    },
+    {
+      "path": "科研工作台/基线选型/检索日志_2026-10-28.md",
+      "bytes": 7659,
+      "sha256": "947533b562f8bd8fb560040a04ca8ae996bff56a172b7fda4da7a04f589e9a2b"
+    },
+    {
+      "path": "科研工作台/实验方案/LIIF验证方案与项目推进计划_2026-10-29.md",
+      "bytes": 16105,
+      "sha256": "415124bf238731422ca6fe478a17e3a1df5aa903d61e40d4f8de43723b085d87"
+    },
+    {
+      "path": "科研工作台/工程记录/FlowGS独立实现映射_2026-10-14.md",
+      "bytes": 9455,
+      "sha256": "f7f2fa591853277d659141c44149ece632f194114b0f26726488c21aa2210cca"
+    },
+    {
+      "path": "科研工作台/工程记录/服务器状态摘要_2026-10-28.md",
+      "bytes": 1245,
+      "sha256": "cf401da996367b2cee757e9806d0cee836f8fd2a76834bed104fa7389f0834f6"
+    },
+    {
+      "path": "科研工作台/技能源码/mri-research-workflow/SKILL.md",
+      "bytes": 6088,
+      "sha256": "45a9c0d6ef1a679445aa8be6eb1f86d5aa363fd4a14d1e84d07997bc9f477afb"
+    },
+    {
+      "path": "科研工作台/技能源码/mri-research-workflow/agents/openai.yaml",
+      "bytes": 328,
+      "sha256": "bdea787893c536c62800817b19a431891912beb72f34f5cdf04e94c0d71ec18d"
+    },
+    {
+      "path": "科研工作台/技能源码/mri-research-workflow/references/records.md",
+      "bytes": 1625,
+      "sha256": "7369ddd2c3bbf8a5be97c8d0c3c26f97499b1fe38394e4c6d7a31f5f4982a652"
+    },
+    {
+      "path": "科研工作台/记录模板.md",
+      "bytes": 2633,
+      "sha256": "e3dcb8c8ffcf899bbd697f275818c7f9a9cb5dd3f52dcb5840e3e957b199384b"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/Flow-based_Gaussian_Splatting_for_Continuous-Scale_Remote_Sensing_Image_Super-Resolution.pdf",
+      "bytes": 3487921,
+      "sha256": "491fec17c3ef9c73bd90e7d73dc7481dacc496a23698de9256ae889178c49ff7"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/FlowGS_中英对照_易读版.md",
+      "bytes": 55681,
+      "sha256": "e0c22e7d49a73a5d612f18526add6d129fb0ba8427771da2574cf1f2d2f4c706"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/FlowGS_论文精读与四项拆解.md",
+      "bytes": 20949,
+      "sha256": "660f1a5fc6dbff1988e86535d57c8cf36921f0671a605fd6e8d4ab0800542c77"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/README.md",
+      "bytes": 1401,
+      "sha256": "9b9029010b945b650bde8b707d661a6c253529647b73acba0bffef1a8f8ba15e"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/F001.png",
+      "bytes": 13790,
+      "sha256": "f648fd7ec03249f87523477370ee8220cd3fcc1ac9da7f67725eb7a9dd8edb61"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/F002.png",
+      "bytes": 151115,
+      "sha256": "a8dbfff1c5d4dbbbef632f4eb941e7ce20336816202bf00d9356a47252c4106e"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/F003.png",
+      "bytes": 474433,
+      "sha256": "f135f74b53d69a00cb69c15190d07e00d01fc17391a589269c9f5f3b794bc039"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/F004.png",
+      "bytes": 31246,
+      "sha256": "af00850692f1b8203cf04d57287dfd9c6b310eda55f017ffbf35e910eb8d177d"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/T001.png",
+      "bytes": 66114,
+      "sha256": "9ac72869f7c709f9c50930784aa9d94e9a5d89810a963dfab1cad50e00a3f8c3"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/T002.png",
+      "bytes": 81566,
+      "sha256": "bd76c9dd6935de1b0a46954e69c1de3edefcc3e41ccc85fd50e20966b4afb272"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/T003.png",
+      "bytes": 20423,
+      "sha256": "8d502c94cd500b537c9665056df126ff44473aac7f4e57dfc7aafcbb7f2ed3a6"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E001.png",
+      "bytes": 8399,
+      "sha256": "6e5cbc03f9e910181e724f9864ef4850bb6d8a198e6928ea2620f4f9c8de18ce"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E002.png",
+      "bytes": 5217,
+      "sha256": "634dfd25f7db136b77909480c591428eb074670359aea415e435d42b74add659"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E003.png",
+      "bytes": 3947,
+      "sha256": "1e5044a7ce183c7a5fb9841031cfa9bf342257ad3c951fc6e7c4834e71238ede"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E004.png",
+      "bytes": 6352,
+      "sha256": "193e369cbbbef468303bb93b407f7e790c3dfb348b7e3f55e3b434758b11e7ee"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E005.png",
+      "bytes": 5165,
+      "sha256": "96d71359f1ad15dc9d27de063997c0d8f514c7c23a9481f6dbd4a7e642e4fbe6"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E006.png",
+      "bytes": 7579,
+      "sha256": "2c5f1ce82e9b2ae6c33662558d023c9749a40f78824f34de3a405ca2e705fefe"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E007.png",
+      "bytes": 6107,
+      "sha256": "a4ffae7f32f313fdfabd59097da70dbee43d3d7d110839c0ea3d3dcb0bf1d972"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E008.png",
+      "bytes": 6155,
+      "sha256": "fa88d4559e54ab0f9ab34d5c02bae744249cb5635d449fd13a76b56c7ef1314d"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E009.png",
+      "bytes": 4969,
+      "sha256": "5faf3da5baa7cf309b6850b8c199b9badbd91304aa9b82c6fbd076a84e500aa9"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E010.png",
+      "bytes": 7083,
+      "sha256": "65552e9bbe7fd1acf735e5a8f64a37033cff575eec4b6f2d54a26e5fc448443a"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E011.png",
+      "bytes": 5537,
+      "sha256": "5d89a30e45fd6b244bd479a3a04316e41863df6d15116d760d69ce753432476c"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E012.png",
+      "bytes": 6778,
+      "sha256": "6eb8a41f92908e2feb94bb97a408b075e0837b1fe1662e2317b7ae9266905ef1"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E013.png",
+      "bytes": 7177,
+      "sha256": "b3d2ed12a961c8669cd6a1ccb9e8465218bd4d4ff955685a8019d6b99a687e37"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E014.png",
+      "bytes": 9096,
+      "sha256": "266b4bbd6d2ecccc5d88e16d691da1c2ce88ebb057176850d20106c2adcedf79"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E015.png",
+      "bytes": 7848,
+      "sha256": "97887c5247cbe0e34088f944b10ae56198d8284d0702f20a18b4f210c1de390c"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E016.png",
+      "bytes": 7220,
+      "sha256": "745b2a3ae483d6166b76eb22f63953c5f742cf71f788f4e64c35e47957060bbc"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E017.png",
+      "bytes": 5675,
+      "sha256": "f43d4d3ae365341a854dd52cf0b4ce56edb5fb97361b93f52bc7dcc360f27005"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/assets/equations/E018.png",
+      "bytes": 7197,
+      "sha256": "234fa22273da5c0ddf5e125d50420c03f6ff12eba8fd22f4f19174686d3b848e"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/paper.md",
+      "bytes": 60761,
+      "sha256": "660ff287013eec490e0c55fc7d2a5065d83dddc9cb195e319004b64d8934fb2e"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/source_map.json",
+      "bytes": 113870,
+      "sha256": "71bd47015e8883b022659842b9c539fa579920b4cd7e0413fab5e72b3ea51767"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/translation_notes.md",
+      "bytes": 2505,
+      "sha256": "929147cd1172b0bd73e724d2fad98b4ebfd84d74a9b9956b3cae40787d697546"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/下载记录_原始.json",
+      "bytes": 1791,
+      "sha256": "66e4320278565e83d429d9090ca5d0ec28049bd5859be58c635a0627a973308f"
+    },
+    {
+      "path": "科研工作台/论文解读/FlowGS/概念问答归档.md",
+      "bytes": 10067,
+      "sha256": "f2c526dc2bc1643036fbebf61cfafe91a19f61f9d265763b4d6cfee7d82be8ab"
+    },
+    {
+      "path": "科研工作台/项目状态.md",
+      "bytes": 4132,
+      "sha256": "b4f18063232ea619f2be1100f8e2c81090336a38d4f29479a59c7d2a71a7b1aa"
+    },
+    {
+      "path": "第一天_3小时入门课.html",
+      "bytes": 36178,
+      "sha256": "fee65fedb65cae8a8244c5dc67e21d5ed665c490aa5df9f0dcd1b6bc34bda605"
+    },
+    {
+      "path": "第三天_3小时入门课.html",
+      "bytes": 39505,
+      "sha256": "67c3f845b46d81b03d1fbaf415058fdfd562831506e9664fc9420c3579815832"
+    },
+    {
+      "path": "第二天_3小时入门课.html",
+      "bytes": 38400,
+      "sha256": "645b80e179477b39acaf29a5913b2c52d78f9c5f4894cfc3f80396d1e68561f4"
+    },
+    {
+      "path": "第四天_3小时入门课.html",
+      "bytes": 35681,
+      "sha256": "b45c6b79f48ab3fd64a85f8b4a0a6c02db390af0eae1d03be4c58ac522570a8c"
+    }
+  ]
+}

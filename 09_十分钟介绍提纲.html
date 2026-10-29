@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>09_十分钟介绍提纲 | 研究组新人资料包</title><link rel="stylesheet" href="assets/style.css"></head><body><header><div class="eyebrow">MRI RECONSTRUCTION · RESEARCH HANDOFF</div><div class="title">研究组新人资料包</div><p>可信的结构恢复 · 准确的心脏动态 · 可核对的实验证据</p></header><div class="shell"><nav aria-label="资料导航"><a href="index.html">从这里开始</a><a href="01_工作全景与方法.html">01 工作全景与方法</a><a href="02_最新结果与证据.html">02 最新结果与证据</a><a href="03_数据与评价口径.html">03 数据与评价口径</a><a href="04_代码地图与环境.html">04 代码地图与环境</a><a href="05_新人第一周建议.html">05 新人第一周建议</a><a href="06_问题与后续方向.html">06 问题与后续方向</a><a href="07_论文与证据来源.html">07 论文与证据来源</a><a href="08_资料包说明与使用范围.html">08 资料包说明与使用范围</a><a href="09_十分钟介绍提纲.html" class="active">09 十分钟介绍提纲</a><a href="LICENSE_DATA.html">LICENSE DATA</a><a href="完整阅读.html">连续阅读 / 打印</a><small>状态快照<br>2026-10-17T12:20:21+08:00<br><br>先完整解压，再打开网页。<br>本页为离线资料，不会自动更新。</small></nav><main><h1>十分钟介绍提纲</h1>
+<p>可以打开离线首页，按下面顺序向新人介绍。数字以资料包的 2026-10-17 快照为准。</p>
+<div class="table-wrap"><table><thead><tr><th>时间</th><th>建议讲什么</th><th>对应材料</th></tr></thead><tbody>
+<tr><td>0–2 分钟</td><td>我们研究 MRI 重建，近期重点是心脏 Cine。希望空间结构更清楚，同时保持真实运动。</td><td><a href="00_从这里开始.html">首页研究地图</a></td></tr>
+<tr><td>2–4 分钟</td><td>之前做了 STADNet、Loop、FM 和高斯生成探索。现在选择有公开代码的 GaussM2ASR 建立医学基线，它原本需要 LR 目标和 HR 参考。</td><td><a href="01_工作全景与方法.html">工作全景</a></td></tr>
+<tr><td>4–6 分钟</td><td>心脏任务只有 LR，引导协议因此改了。ACDC 单帧微调比 Fourier 输入提高约 1.65 dB；多帧和时序尝试还没有稳定实用收益。</td><td><a href="02_最新结果与证据.html">结果图与动图</a></td></tr>
+<tr><td>6–7 分钟</td><td>原方法完整预算仍在双卡训练，论文原表效果还没有核验。训练进度比例不能当性能复现比例。</td><td><a href="02_最新结果与证据.html">训练验证曲线</a></td></tr>
+<tr><td>7–8 分钟</td><td>曾发现旧数据轴转换和真值问题，相关旧结论已经作废。新人首先要知道数据、输入、真值和指标的定义。</td><td><a href="03_数据与评价口径.html">数据口径</a></td></tr>
+<tr><td>8–10 分钟</td><td>介绍代码入口和第一周小任务。先读状态、跑 CPU 检查、重画汇总图，再讨论一个明确假设。</td><td><a href="04_代码地图与环境.html">代码地图</a>、<a href="05_新人第一周建议.html">第一周建议</a></td></tr>
+</tbody></table></div>
+<p>建议结束时请新人用自己的话说明：原论文任务与心脏任务有什么区别，目前最可信的成果是什么，下一项实验要排除哪个疑问。这样可以尽早发现理解偏差。</p><div class="chapter-end"><a href="08_资料包说明与使用范围.html">← 08_资料包说明与使用范围</a><a href="LICENSE_DATA.html">LICENSE_DATA →</a></div></main></div><footer>2026-10-17 版 · 非商业科研入组介绍 · ACDC 派生图：CC BY-NC-SA 4.0，Bernard et al., IEEE TMI 2018。详细归属见许可说明。</footer></body></html>

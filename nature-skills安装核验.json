@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-28",
+  "repository": "https://github.com/Yuan1z0825/nature-skills",
+  "commit": "c1637a89c7097d486ba1c6e755e34d01cbb24998",
+  "checked_files": 814,
+  "total_bytes": 40065183,
+  "directories": 24,
+  "errors": [],
+  "skills": [
+    {
+      "directory": "nature-academic-search",
+      "name": "nature-academic-search"
+    },
+    {
+      "directory": "nature-citation",
+      "name": "nature-citation"
+    },
+    {
+      "directory": "nature-data",
+      "name": "nature-data"
+    },
+    {
+      "directory": "nature-downloader",
+      "name": "nature-downloader"
+    },
+    {
+      "directory": "nature-experiment-log",
+      "name": "nature-experiment-log"
+    },
+    {
+      "directory": "nature-figure",
+      "name": "nature-figure"
+    },
+    {
+      "directory": "nature-image2ppt",
+      "name": "nature-image2ppt"
+    },
+    {
+      "directory": "nature-literature-pipeline",
+      "name": "nature-literature-pipeline"
+    },
+    {
+      "directory": "nature-paper-card",
+      "name": "nature-paper-card"
+    },
+    {
+      "directory": "nature-paper-to-patent",
+      "name": "nature-paper-to-patent"
+    },
+    {
+      "directory": "nature-paper-trans",
+      "name": "nature-paper-trans"
+    },
+    {
+      "directory": "nature-paper-xray",
+      "name": "nature-paper-xray"
+    },
+    {
+      "directory": "nature-paper2ppt",
+      "name": "nature-paper2ppt"
+    },
+    {
+      "directory": "nature-paper2word",
+      "name": "nature-paper2word"
+    },
+    {
+      "directory": "nature-polishing",
+      "name": "nature-polishing"
+    },
+    {
+      "directory": "nature-proposal-writer",
+      "name": "researchwrite"
+    },
+    {
+      "directory": "nature-reader",
+      "name": "nature-reader"
+    },
+    {
+      "directory": "nature-ref-verifier",
+      "name": "nature-ref-verifier"
+    },
+    {
+      "directory": "nature-response",
+      "name": "nature-response"
+    },
+    {
+      "directory": "nature-reviewer",
+      "name": "nature-reviewer"
+    },
+    {
+      "directory": "nature-shared",
+      "name": "nature-shared"
+    },
+    {
+      "directory": "nature-social-science",
+      "name": "nature-social-science"
+    },
+    {
+      "directory": "nature-statistics",
+      "name": "nature-statistics"
+    },
+    {
+      "directory": "nature-writing",
+      "name": "nature-writing"
+    }
+  ],
+  "runtime_dependencies": "Not installed or functionally tested; configure as needed."
+}

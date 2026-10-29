@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第三天 · 特征、连续坐标、高斯表示与任意倍率</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f4f7fb;color:#23354b;font:17px/1.95 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}main{max-width:960px;margin:28px auto;padding:36px 46px;background:white;border-radius:16px}h1{font-size:31px;line-height:1.5}h2{font-size:25px;border-top:2px solid #e5edf5;margin-top:45px;padding-top:24px}h3{font-size:20px;margin-top:26px}p{margin:14px 0}a{color:#2459b7;overflow-wrap:anywhere}nav{background:#edf4fc;padding:15px 20px;border-radius:10px}nav a{display:inline-block;margin:4px 12px 4px 0}table{width:100%;border-collapse:collapse;font-size:15px;margin:20px 0}td,th{border:1px solid #dbe5ef;padding:10px;text-align:left;vertical-align:top}th{background:#edf4fb}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6fa;padding:18px;font-size:16px;line-height:1.8}blockquote{margin:20px 0;padding:15px 20px;background:#eef6fb;border-left:4px solid #3b789f}details{border:1px solid #dce5ef;padding:12px 17px;border-radius:9px;margin:14px 0}summary{color:#2459a0;font-weight:650;cursor:pointer}li{margin:7px 0}.small,figcaption{font-size:14px;color:#526b81}.tag{color:#286c77;font-size:14px;font-weight:650}.formula{padding:14px;background:#f3f7fb;text-align:center;font-size:19px}.task{background:#fff9e9;padding:16px 20px;border-radius:10px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:16px}.controls label{display:block}.controls input,.controls select{display:block;width:100%;min-height:36px;font:inherit}.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.demo-grid figure{margin:16px 0}.demo-grid canvas{width:100%;height:auto;max-width:280px;display:block;image-rendering:auto}.demo-grid figcaption{margin:7px 0}.demo{margin:20px 0;padding:18px;background:#f5f8fc}.term{font-weight:650}code{font-size:.93em} @media(max-width:650px){main{margin:0;padding:22px 18px}body{font-size:16px}h1{font-size:26px}table{font-size:13px}td,th{padding:7px}.controls,.demo-grid{grid-template-columns:1fr}.demo-grid canvas{max-width:260px}}@media print{body{background:white;font-size:11pt}main{margin:0;padding:0;max-width:none}nav,.controls{display:none}h2{font-size:17pt;break-after:avoid}h3{break-after:avoid}details,figure,tr{break-inside:avoid}@page{margin:18mm}}
+</style></head><body><main>
+<p class="tag">研究组新人课程 · 第三天 · 180 分钟含休息 · 不需要编程</p>
+<h1>模型怎样表示一张图？从特征到高斯，再到任意倍率</h1>
+<p>第一天解决“图像缺了什么”，第二天解决“怎样训练和评价”。今天打开模型内部的一小部分，理解它怎样把输入变成可以在不同网格上输出的图像。你不需要线性代数基础，也不用先会写神经网络。</p>
+<blockquote><strong>今天要形成的理解：</strong>模型从 LR 提取特征，利用这些特征建立图像表示，再按所需坐标生成输出。连续坐标和高斯让输出尺度更灵活，但“可以输出更多像素”不保证“恢复更多真实细节”。</blockquote>
+<p>正文先讲人话，再给术语。每一节都有纸笔任务和折叠答案。后面的高斯实验只是几千个小格的数学演示，不读取 MRI、不训练模型，也不会在后台持续运行。只需打开这一页。</p>
+<nav><a href="#plan">时间安排</a><a href="#review">复习</a><a href="#features">特征</a><a href="#coordinates">连续坐标</a><a href="#gaussian">高斯与演示</a><a href="#scale">任意倍率</a><a href="#method">本组方法</a><a href="#exam">自测</a><a href="#sources">资料</a></nav>
+
+<h2 id="plan">三小时任务表</h2>
+<table><tr><th>时间</th><th>学习内容</th><th>要完成的事</th></tr>
+<tr><td>00–15 分钟</td><td>基线、模型结构、微调的区别</td><td>给术语分类，复述输入协议</td></tr>
+<tr><td>15–40 分钟</td><td>像素、特征、通道与编码器</td><td>手算一个边缘特征</td></tr>
+<tr><td>40–65 分钟</td><td>坐标、函数、连续查询与网格</td><td>算一条亮度曲线上的查询值</td></tr>
+<tr><td>65–75 分钟</td><td>休息</td><td>离屏活动</td></tr>
+<tr><td>75–110 分钟</td><td>高斯中心、宽度、方向、强度</td><td>调节演示，记录观察；画三笔光斑</td></tr>
+<tr><td>110–135 分钟</td><td>任意倍率、训练尺度与泛化</td><td>算输出尺寸，设计倍率检查表</td></tr>
+<tr><td>135–145 分钟</td><td>休息</td><td>不追加视频</td></tr>
+<tr><td>145–165 分钟</td><td>读懂 GaussM2ASR 与心脏适配</td><td>画出允许的输入、监督和输出</td></tr>
+<tr><td>165–180 分钟</td><td>闭卷自测与复述</td><td>10 道题＋一分钟讲解</td></tr></table>
+<p>所有时间包含阅读、思考、练习和对答案。可选视频与公式选读替代相应阅读，不需要全部叠加。若某节卡住，先记下原句，把问题带回聊天；不要求在三小时内背下所有名词。</p>
+
+<h2 id="review">00–15 分钟：先整理你已经问过的概念</h2>
+<h3>1. 表格里一行“方法”不一定是一种网络名字</h3>
+<table><tr><th>词</th><th>描述什么</th><th>本组例子</th></tr>
+<tr><td>基线 baseline</td><td>用于比较的起点</td><td>比较模型有无改善时，可以用 Fourier 低通输入；比较时序有没有帮助时，可以用单帧模型</td></tr>
+<tr><td>模型结构</td><td>计算模块如何组织</td><td>特征提取、融合、高斯参数预测、渲染等模块的连接</td></tr>
+<tr><td>参数／权重</td><td>训练学到的内部数字</td><td>同一个结构可以保存不同训练阶段的权重</td></tr>
+<tr><td>微调 fine-tuning</td><td>训练方式</td><td>从已有 IXI 权重出发，在心脏数据上继续训练</td></tr>
+<tr><td>单帧</td><td>每次重建利用的图像信息</td><td>只用当前 LR 帧，不用邻帧；不意味着只用一张图片训练</td></tr>
+<tr><td>种子 16</td><td>随机过程的设置</td><td>记录某次训练采用的随机种子，16 不是患者数量</td></tr></table>
+<p>所以“单帧微调，种子 16”是一行实验方案简称：用单帧信息，从已有权重继续训练，以特定随机设置得到一个模型，再报告它的成绩。</p>
+<h3>2. 指标高，不自动意味着答案真实</h3>
+<p>PSNR 比较像素误差，SSIM 比较局部亮度、对比度和结构变化；两者都不是医学准确率。相同设置下分数改善有意义，但没有跨数据集通用的“优秀分数线”。TEST 用来选模型后，也不能继续宣称完全独立于选择过程。</p>
+<div class="task"><strong>复习题：</strong>①“单帧”是不是只用一帧训练？②“微调”是不是独立网络名称？③两个相同结构能否有不同权重？④当前心脏模型推理能否使用目标 HR？</div>
+<details><summary>复习答案</summary><p>① 不是，可使用大量患者和帧训练，只是每次预测不借邻帧。② 不是，是继续训练已有参数的一种方式。③ 可以，不同数据、初始化、训练步骤都可能产生不同权重。④ 当前 LR-only 协议不允许，HR 用于训练监督与评测。</p></details>
+
+<h2 id="features">15–40 分钟：从像素到“特征”</h2>
+<p>建议 10 分钟阅读，8 分钟手算，7 分钟做流程复述。</p>
+<h3>1. 特征是什么？</h3>
+<p><strong>特征 feature：</strong>从原始数据计算出来、用于后续任务的一种数值表示。例如原始像素告诉我们“这里有多亮”；一种特征可能反映“这里左右变化有多大”，另一种可能综合更大区域的信息。</p>
+<p>类比看一道菜：原始照片记录各处颜色；你做笔记时可能描述轮廓、纹理和相邻区域关系。模型的“笔记”也是数字，不是中文句子。实际学到的特征往往不能一张张直接命名为“心肌特征”“左心室特征”。</p>
+<h3>2. 手算一个最简单的特征</h3>
+<p>下面是一排从暗到亮的像素。我们定义一个教学规则：右边减左边。</p>
+<pre>原像素：    0.2，0.2，0.8，0.8
+相邻差值：      0， 0.6， 0</pre>
+<p>中间差值最大，提示这里有明显亮度变化。这就是一种边缘线索。它不保证一定是解剖边界，噪声也可能造成变化。</p>
+<div class="task"><strong>你来算：</strong>A＝[0.3,0.3,0.3,0.3]，B＝[0.8,0.8,0.2,0.2]。分别算相邻差值。哪个没有变化？哪个有反方向的变化？</div>
+<details><summary>特征练习答案</summary><p>A 差值为 [0,0,0]；B 为 [0,−0.6,0]。负号表示这里是从亮向暗变化，不是“负亮度”。特征值可以为负，不必和原图亮度范围相同。</p></details>
+<h3>3. 卷积和特征图，先用小窗口理解</h3>
+<p><strong>卷积 convolution：</strong>图像网络里常用的一种局部计算。可以先理解成拿一个小窗口在图像上移动，在每个位置按相同权重组合附近像素，形成输出。权重可以通过训练学习。上面的相邻差值只是极简的局部计算例子，实际网络更复杂。</p>
+<p><strong>特征图 feature map：</strong>在许多位置都计算特征后得到的数值网格。<strong>通道 channel：</strong>可以想成一层数值网格；多通道就是多层不同的特征记录。</p>
+<pre>一张灰度图：128×128×1
+    ↓ 特征提取（教学示意，保持空间大小）
+多层特征：128×128×32
+
+128×128：每层的空间网格
+32：每个位置记录 32 个特征数值</pre>
+<p>这里的 32 个通道不是 32 个时相，也不是 32 张真实 MRI。网络特征的空间大小也可能改变；本例只是便于理解，不是本组实际代码的全部形状。</p>
+<h3>4. 编码器与解码器</h3>
+<p><strong>编码器 encoder：</strong>把输入变成特征表示的计算模块。<strong>解码器 decoder：</strong>利用表示产生图像等输出的模块。名称描述功能；编码不一定缩小数组，也不意味着无损压缩。</p>
+<pre>LR 像素 → 编码器 → 特征 → 后续重建模块 → 输出图像</pre>
+<p>学习型特征有助于模型组合信息，但并没有新增患者测量。缺失细节的判断来自输入约束与训练规律，仍须评价。之后学习 FM 时会遇到“潜变量”，可以先把它理解为模型内部使用的一种表示，今天不深入。</p>
+<details><summary>检查点 A：有了 32 个特征通道，真实测得的信息就增加到 32 倍了吗？</summary><p>没有。它们是从输入算出来的不同表示，不是另外采集了 32 份独立测量。表示更丰富有助于计算，但不能因此宣称真实分辨率增加。</p></details>
+
+<h2 id="coordinates">40–65 分钟：把图像从“表格”想成“可查询的函数”</h2>
+<h3>1. 坐标是位置，像素值是这个位置的亮度</h3>
+<p>一个位置可以用两个数字表示，例如横向位置 x、纵向位置 y。两个数字合起来记为 q＝(x,y)，q 只是“查询位置”的简写。</p>
+<p>为了在不同尺寸间方便描述，这里用 0 到 1 表示整幅图的范围：左上附近是 (0,0)，中心是 (0.5,0.5)，右下附近是 (1,1)。这是一种教学坐标约定；实际代码可能用 −1 到 1，或不同的轴顺序。</p>
+<p><strong>离散：</strong>只在有限网格位置存数值。<strong>连续坐标：</strong>位置可以取小数，例如 (0.37,0.62)。这不等于计算机具有无限精度，只是模型不被某一组整数像素索引限制。</p>
+<h3>2. 函数不神秘：输入位置，返回数值</h3>
+<p>先看一维教学函数 f(x)＝0.2＋0.6x，x 从 0 到 1。它描述从暗到亮的一条平滑变化，不是训练出来的医学模型。</p>
+<table><tr><th>查询位置 x</th><th>亮度 f(x)</th></tr><tr><td>0</td><td>0.2</td></tr><tr><td>0.5</td><td>0.5</td></tr><tr><td>1</td><td>0.8</td></tr></table>
+<div class="task"><strong>手算：</strong>f(0.25) 和 f(0.75) 分别是多少？如果再查询 x＝0.4，要不要重新定义整个函数？</div>
+<details><summary>查询练习答案</summary><p>f(0.25)＝0.35，f(0.75)＝0.65。f(0.4)＝0.44，不需要重新定义函数。只是在同一个函数上换了查询位置。</p></details>
+<h3>3. 换网格，就是换一组查询位置</h3>
+<p>假设图像范围是 [0,1]，用像素中心作为查询点：</p>
+<pre>4 格中心：0.125，0.375，0.625，0.875
+8 格中心：0.0625，0.1875，0.3125，……，0.9375</pre>
+<p>两组位置覆盖相同范围，但第二组采样更密。对二维图，在横纵两个方向都安排查询点，得到二维输出网格。格子从 4×4 变到 8×8，查询数从 16 变到 64。</p>
+<p>更严格地说，真实像素代表一定范围内的测量，某些方法也考虑像素覆盖范围而非只用中心点。今天的中心点查询是简化直觉，之后再学面积积分、抗混叠和具体渲染。</p>
+<h3>4. 如果只有一个函数，不是所有患者都长一样了吗？</h3>
+<p>所以模型还需要输入图像的<strong>特征作为条件</strong>。“条件”就是告诉模型它正在处理哪一幅图、已经观察到什么。</p>
+<pre>某位患者的 LR → 编码器 → 这幅图的特征
+                                  ↓
+查询坐标 q ─────────────────→ 查询模块 → 该位置的预测亮度</pre>
+<p>同样查询 (0.5,0.5)，不同患者的输入特征不同，预测值可以不同。只有坐标、没有图像相关信息，通常不能完成输入相关的超分任务。</p>
+<h3>5. LIIF：认识一种思路即可</h3>
+<p><strong>LIIF</strong> 的全称是 Local Implicit Image Function，可译为“局部隐式图像函数”。它利用查询坐标附近的图像特征预测该位置的图像值。这里“隐式”可先理解成用一个可计算的函数表达图像，而不只是预先列出固定大小的像素表。它是理解连续查询的代表路线，与你们的高斯方法不是同一个模型。参考 <a href="https://arxiv.org/abs/2012.09161">LIIF 原论文</a>。</p>
+<p><strong>可选 5 分钟：</strong>打开<a href="https://yinboc.github.io/liif/">作者项目页的演示与视频</a>，只看“Changing Resolution”部分，观察同一图像表示如何生成不同网格。视频和演示为自然图像，不是心脏效果证据；打不开就完成上述手算，学习内容仍然完整。</p>
+<details><summary>检查点 B：双线性插值也能查询小数位置，连续表示的优势在哪里？</summary><p>连续坐标本身不是学习超分的独有发明。双线性插值也按固定规则计算新位置。学习方法尝试从训练中学习更适合数据的重建规律；高斯方法则用可调连续基元表达图像。是否比插值恢复得更准确，需要同条件实验，不能只凭“连续”这个词认定更好。</p></details>
+
+<h2>65–75 分钟：休息</h2>
+<p>回来时试着回答：“把查询点变多，改变的是输出网格；它有没有自动增加真实观测？”</p>
+
+<h2 id="gaussian">75–110 分钟：高斯是一个中心强、向外渐弱的光斑</h2>
+<p>建议 10 分钟建立直觉，10 分钟操作演示，10 分钟理解叠加与渲染，5 分钟画图复述。</p>
+<h3>1. 为什么图像可以由“光斑”组成？</h3>
+<p>想象用柔边画笔画画：每落一笔，中间颜色最强，往外逐渐变淡。许多笔放在不同位置，调整宽度、方向和强度，就能组成复杂的亮度图案。</p>
+<p><strong>高斯 Gaussian：</strong>一种中心较强、向外按特定平滑规律衰减的数学函数。一维截面像钟形；二维可以像圆形或椭圆形柔光斑。这里用它表示图像强度分布，不表示“每个点是肿瘤概率”，也不是把患者真的拆成椭圆组织。</p>
+<h3>2. 一笔高斯需要描述什么？</h3>
+<table><tr><th>参数</th><th>通俗含义</th><th>改变后看到什么</th></tr><tr><td>中心 μ</td><td>这一笔放在哪里</td><td>光斑位置移动</td></tr><tr><td>宽度 σ₁、σ₂</td><td>沿两个主方向延伸多宽</td><td>更宽、更窄或更细长</td></tr><tr><td>方向 θ</td><td>椭圆朝哪个方向</td><td>长轴转动</td></tr><tr><td>强度 a</td><td>这一笔贡献多强</td><td>中心及周围贡献改变</td></tr></table>
+<p><strong>各向同性：</strong>各个方向宽度相同，像圆。<strong>各向异性：</strong>方向不同，宽度可以不同，像椭圆。<strong>协方差矩阵 Σ：</strong>把这些宽度和方向组织在一起的一种数学写法；今天不需要矩阵运算。</p>
+<p>为什么椭圆可能有用？心肌边界常有局部细长方向，沿边界铺长一点、跨边界窄一点，可能比圆斑更灵活。但这只是表达能力的直觉，不能跳过训练和评价就证明效果。</p>
+<h3>3. 亲手调整一个高斯</h3>
+<p>下图两侧来自<strong>同一个已知教学函数</strong>。左侧用较密网格显示形状，右侧在你选的网格中心采样后放大显示。灰度固定在 0–1 范围：黑色为 0，白色为 1。左侧也不是无限分辨率真值，右侧更不是神经网络输出。</p>
+<div class="demo" id="gaussian-lab">
+<div class="controls">
+<label for="gwidth">第一主轴宽度：<output id="gwidth-value">0.20</output>（归一化坐标）<input id="gwidth" type="range" min="8" max="28" value="20" step="1"></label>
+<label for="gangle">旋转角度：<output id="gangle-value">30</output>°<input id="gangle" type="range" min="0" max="180" value="30" step="5"></label>
+<label for="gcenter">中心横坐标：<output id="gcenter-value">0.50</output><input id="gcenter" type="range" min="30" max="70" value="50" step="5"></label>
+<label for="ggrid">右侧输出网格<select id="ggrid"><option value="8">8 × 8</option><option value="16" selected>16 × 16</option><option value="32">32 × 32</option><option value="64">64 × 64</option></select></label>
+</div>
+<div class="demo-grid"><figure><canvas id="g-dense" width="256" height="256" role="img" aria-label="同一个二维高斯在256乘256网格上的显示">高斯形状示意；若不能显示，请使用后面的纸笔练习。</canvas><figcaption>较密显示：256×256；坐标范围 [0,1]²</figcaption></figure><figure><canvas id="g-sampled" width="256" height="256" role="img" aria-label="二维高斯在所选网格上采样并以方格放大显示">改变网格只改变采样密度，不能新增真实测量。</canvas><figcaption id="g-caption">16×16：256 个查询点</figcaption></figure></div>
+<p id="g-status" class="small" aria-live="polite">第二主轴宽度固定为 0.08；中心纵坐标 0.50；峰值 1。</p>
+<noscript><p>当前环境未运行演示脚本。请做下面的纸笔替代练习，正文不依赖脚本。</p></noscript>
+</div>
+<ol><li>把第一主轴宽度改为 0.08：两条主轴一样宽，图形会怎样？再转角度，还会改变形状吗？</li><li>把宽度改回 0.20，再改变角度：哪一项控制形状的朝向？</li><li>只移动中心横坐标：光斑在什么方向移动？形状参数是否改变？</li><li>固定中心、宽度和角度，把右侧从 8×8 改到 64×64：变化的是原函数，还是查询密度？有没有获得一份新 MRI 测量？</li></ol>
+<details><summary>演示观察答案</summary><p>1. 变圆；圆形对旋转不敏感，理想函数不变。2. 角度控制朝向，两个宽度控制主轴延伸程度。3. 光斑沿水平方向移动，宽度和角度不变；画面范围外的尾部显示可能不同。4. 原函数不变，查询数从 64 增加到 4096，显示更细密，但没有新增测量。</p><p>偶数网格不一定正好采到中心，右侧最亮像素可能略低于 1；这也提醒我们，采样位置影响离散显示。演示采用中心点采样，未模拟完整 MRI 采集或真实渲染中的像素面积处理。</p></details>
+<details><summary>演示不能用时：10 分钟纸笔替代</summary><p>先画一个中心深、向外浅的圆斑，再画同样中心的细长椭圆，再旋转椭圆方向。给每张图写上中心、宽度、方向。最后在同一个椭圆上分别盖 4×4 和 8×8 网格，想象每格只在中心记录一个数。比较“换画笔形状”和“换记录格子”的区别。</p></details>
+<h3>4. 一个高斯不够，就组合很多个</h3>
+<p>单个高斯只能表达简单的平滑光斑。复杂图像需要很多个基元组合。<strong>基元 primitive</strong>就是构成复杂表示的小部件；这里指一个个高斯。</p>
+<p>一个教学版本可以写成：</p>
+<p class="formula">某位置的预测亮度＝高斯 1 的贡献＋高斯 2 的贡献＋……</p>
+<p>真实实现可能还包含特征解码、归一化或不同融合方式；不能把这个示意求和公式当作 GaussM2ASR 源码的精确复述。光斑强度也不必都直接等于最终像素亮度。</p>
+<p><strong>渲染 rendering：</strong>根据表示和输出网格，计算图像数值的过程。<strong>高斯泼溅／splatting：</strong>可先想成把每个高斯的贡献分配到覆盖的输出位置，再组合起来。</p>
+<pre>很多高斯的中心、形状、强度
+                  ＋ 输出网格
+                      ↓ 渲染
+                 像素图像</pre>
+<h3>5. 高斯参数由谁决定？</h3>
+<p>教学演示由你手调；学习模型通常通过网络从输入特征预测。训练时，把渲染图与 HR 比较产生损失，更新网络权重，使后续预测出的高斯更适合重建。</p>
+<p><strong>两个“参数”要分清：</strong>网络权重是训练后保存的计算规则；为某张图预测的高斯中心和宽度，是这次输入对应的表示。网络权重不变时，换一位患者，预测的高斯仍然可以变化。</p>
+<details><summary>公式选读：只认识一维高斯</summary><p>g(x)＝a × exp[−(x−μ)² / (2σ²)]。a 是中心峰值，μ 是中心位置，σ 控制宽度；exp 是指数函数。离中心越远，函数值越小。σ 不是一个硬边界，高斯不会在某个半径突然变成 0。这里采用峰值固定的强度函数，不要求积分等于 1，不要直接套成概率密度。</p></details>
+<div class="task"><strong>本节交付：</strong>画三笔高斯，分别表示“大范围平滑亮区”“局部细长亮区”“方向不同的细长亮区”。写出每笔要改哪些参数，不需要画真实心脏。</div>
+
+<h2 id="scale">110–135 分钟：任意倍率的“任意”，究竟是什么意思？</h2>
+<h3>1. 固定倍率与任意倍率</h3>
+<p>固定倍率模型可能只设计成输出 ×4。任意倍率方案希望同一组学到的权重能支持不同目标尺度，例如 ×2、×2.5、×3.7，而不必每个倍率重新训练一套网络。</p>
+<p>连续图像表示使不同网格的查询更自然。模型也可能显式接收倍率或像素覆盖大小，调整其计算；不能认定所有任意倍率方法都只是在最后简单换网格。</p>
+<h3>2. 先练最常见的尺寸倍率</h3>
+<p>在“倍率＝输出边长÷输入边长”的教学协议中，输入为 64×64：</p>
+<table><tr><th>线性倍率</th><th>输出尺寸</th><th>总像素数</th></tr><tr><td>×2</td><td>128×128</td><td>16,384</td></tr><tr><td>×2.5</td><td>160×160</td><td>25,600</td></tr><tr><td>×4</td><td>256×256</td><td>65,536</td></tr></table>
+<p>×4 的总像素数是输入的 16 倍，不能把边长倍率和面积倍率混为一谈。若乘出来不是整数，必须约定取整规则，并记录最终网格；不是有“半个像素”。</p>
+<div class="task"><strong>计算：</strong>输入 80×80，×1.5 和 ×3.2 的输出分别多大？如果只把输出采样点增加，原来的 LR 含有的信息会不会自动变多？</div>
+<details><summary>倍率计算答案</summary><p>分别是 120×120 和 256×256。查询点增加并不增加原始观测信息。是否恢复出准确的新细节，需要同条件参考或观测约束及评价。</p></details>
+<h3>3. 为什么本组 ×4 却仍然 128×128？</h3>
+<p>因为上面讲的是<strong>输出尺寸倍率</strong>；本组心脏表里的“名义 ×4”描述的是<strong>合成退化的频率尺度</strong>，输入已经零填回原网格。这两个协议不能混用：</p>
+<table><tr><th>情形</th><th>×4 在这里描述什么</th><th>数组例子</th></tr><tr><td>常见尺寸放大示例</td><td>每个方向的输出网格加密 4 倍</td><td>64×64 → 256×256</td></tr><tr><td>当前 ACDC 合成协议</td><td>频域只保留较小中央范围，称名义 ×4</td><td>128×128 LR → 128×128 输出</td></tr></table>
+<p>所以读论文或代码时，先问“倍率是如何定义的、输入经过什么处理、目标网格是什么”，不要只看一个 ×4 就断言任务完全相同。</p>
+<h3>4. 三件事要分别验证</h3>
+<ol><li><strong>能否输出：</strong>程序能否生成目标尺寸，数值是否正常？</li><li><strong>输出是否准确：</strong>在该尺度上，结构、像素误差和时间变化是否可靠？</li><li><strong>超出训练范围是否仍可靠：</strong>训练只覆盖 1–4 时，不能凭能输出 ×6 就认定 ×6 有效。</li></ol>
+<p><strong>范围内未见尺度：</strong>例如训练选择了某些尺度，测试另一个处于训练范围内的尺度。<strong>范围外外推：</strong>训练范围 1–4，测试 ×6。两者难度和证据要分开。不要仅因模型支持 ×4，就宣称具备已验证的任意倍率能力。</p>
+<p>表达能力也是有限的：粗糙的特征、不够灵活的高斯、错误的条件，都可能让表示本身缺少细节。把一个错误的函数采样得再密，只会更密地显示同一个错误。</p>
+<div class="task"><strong>倍率检查表：</strong>假设你计划训练 1–4 范围，给验证安排 ×2、×2.5、×4 和范围外 ×6。每项写清：退化定义、输入/输出尺寸、参考来源、质量指标、推理耗时。现在只写计划，不启动实验。</div>
+<details><summary>检查表的合格标准</summary><p>不能只有四个 PSNR 数字。应说明四个尺度如何制造 LR、查询怎样的目标网格、数值范围和后处理是否一致。×6 单列为外推；比较相同尺度下的模型，不能直接把 ×2 与 ×6 的绝对分数当成模型优劣。速度需包括完整流程，并注明目标尺寸。</p></details>
+
+<h2>135–145 分钟：休息</h2>
+<p>离开屏幕。回来时试着解释：“为什么把网格变密，不等于把患者的测量变多？”</p>
+
+<h2 id="method">145–165 分钟：把今天的概念放回本组模型</h2>
+<h3>1. GaussM2ASR 的名字背后，先看数据流</h3>
+<p>依据资料包，原方法研究“多对比 MRI、解剖引导、各向异性高斯、任意倍率超分”。<strong>多对比</strong>指不同 MRI 对比设置，例如 T1、T2，它们可能让同一组织呈现不同信号；不是相邻时相，也不等于 RGB 颜色通道。</p>
+<p><strong>配准 registration：</strong>尽量把不同图像中对应的解剖位置对齐。<strong>参考引导 guide：</strong>给目标重建额外提供的图像信息。在原方法设定中，目标对比是 LR，另一对比的引导可以是已配准 HR。</p>
+<pre>LR 目标对比 ──→ 特征 ──┐
+                       ├→ 融合与处理 → 高斯表示 → 目标网格渲染
+HR 参考对比 ──→ 特征 ──┘</pre>
+<p><strong>融合 fusion：</strong>把不同来源的特征组合起来。<strong>解剖引导</strong>表示利用结构相关信息约束或帮助表示，不等于模型已经被证明能理解所有解剖或不会造假细节。</p>
+<h3>2. 当前心脏任务的输入不同</h3>
+<p>心脏 cine 部署时没有保证存在同一时相、可靠配准的 HR 参考，因此本组适配让引导只来自 LR 中心帧或邻帧，目标 HR 只用于监督与评分。</p>
+<pre>LR 当前帧（单帧方案）
+       ↓ 特征与高斯重建路径
+     重建图 ──→ 与 HR 比较，计算训练损失或评测指标
+
+多帧方案：可加入 LR 邻帧；是否真的有收益要与单帧基线比较。
+HR 目标：没有接到常规心脏推理的输入箭头上。</pre>
+<p>这里的流程图是概念图，不代表已经给出每个实现分支。一个代码结构可以保留多个分支，但如果各分支只来自同一 LR 帧的信息，仍然没有获得额外 HR 引导。公平比较必须看信息来源，而不只看分支数。</p>
+<h3>3. 两阶段训练、冻结模块是什么意思？</h3>
+<p><strong>AGGP</strong> 是 Anatomy-Guided Gaussian Parametrizer 的缩写，可译为“解剖引导的高斯参数化模块”。今天只需知道它把相关表示转成高斯参数，是网络中的一个模块。</p>
+<p>资料包记录的 IXI 原方法训练：第一阶段在 ×1 任务中学习表示；第二阶段冻结 AGGP，并训练不同倍率重建。<strong>冻结</strong>表示这个模块的权重不再更新，不表示它不参与计算，更不表示所有患者都输出同一组高斯。</p>
+<pre>冻结的转换规则 ＋ 不同输入特征 → 仍然可以得到不同高斯参数</pre>
+<p>像固定的乘法规则，输入 2 得到一个结果、输入 3 得到另一个结果。规则固定，输出仍然依输入变化。第一阶段 ×1 高分也不能当成高倍率恢复能力的证据。</p>
+<p>这一段以本包 <a href="01_工作全景与方法.md">方法说明</a>和 <a href="03_数据与评价口径.md">数据口径</a>为依据；公开入口见<a href="https://github.com/Qiuhai-CV/GaussM2ASR">作者仓库</a>。当前仓库可能继续更新，阅读本包实验时仍需对应其固定版本。</p>
+<h3>4. 四个目标现在各在什么位置？</h3>
+<table><tr><th>目标</th><th>负责什么</th><th>今天能回答到哪里</th></tr><tr><td>心脏 cine</td><td>任务对象与时间信息</td><td>知道每帧结构和运动都要准确</td></tr><tr><td>任意倍率</td><td>支持多个输出尺度或退化尺度的能力</td><td>理解连续表示、网格与尺度验证</td></tr><tr><td>FM</td><td>后续考虑的一类学习生成路径的方法</td><td>知道它不是“高斯表示”的同义词，下一天再学路径与速度</td></tr><tr><td>one-step</td><td>希望核心推理只用少量调用的计算目标</td><td>知道一次渲染不等于整个生成流程只有一次网络调用</td></tr></table>
+<p>“高斯”描述如何表示图像；“FM”描述一类训练与生成机制。可以研究组合，但使用高斯不自动等于已经使用 FM。资料包当前的单帧心脏结果，也不是四个目标已经集成成功的证据。</p>
+<div class="task"><strong>本节交付：</strong>画两张图：一张原方法“LR 目标＋HR 引导”，一张当前心脏“LR-only”。给 HR 目标画出监督箭头，给目标网格画出渲染箭头。然后圈出训练时可用、推理时不可用的信息。</div>
+<details><summary>画图核对</summary><p>原方法中“HR 引导”是另一对比的输入，不要与“待预测的目标 HR”混淆。心脏方案推理不应使用目标 HR；单帧只用本帧 LR 来源，邻帧属于额外实验变化。两者都可用目标 HR 算训练损失或评测误差。目标网格决定在哪里输出，不能充当患者结构证据。</p></details>
+
+<h2 id="exam">165–180 分钟：闭卷自测</h2>
+<p>先用 10 分钟作答，再用 5 分钟核对和复述。每题 1 分；重点是原因，措辞不必与解析相同。</p>
+<ol><li>特征和原始像素有什么区别？32 个特征通道是否意味着新采集了 32 份图像？</li><li>序列 [0.1,0.1,0.7,0.7] 的相邻差值是什么？最大的变化在哪里？</li><li>函数 f(x)＝0.2＋0.6x，f(0.25) 是多少？增加一个查询点是否一定要重新训练模型？</li><li>同一个位置 q，为什么不同患者的模型输出可以不同？还需要什么信息？</li><li>高斯的中心、宽度、方向、强度各控制什么？两主轴一样宽时，旋转是否改变理想光斑形状？</li><li>什么是渲染？把同一个高斯从 16×16 渲染为 64×64，是否新增了真实测量？</li><li>在尺寸倍率协议中，80×80 输入做 ×2.5 输出多大？本组 128×128 输入做名义 ×4 是否一定输出 512×512？</li><li>一个方法能输出 ×6，而训练范围仅 1–4，能否直接宣布 ×6 重建可信？</li><li>原方法的 HR 引导与目标 HR 有什么区别？本组心脏 LR-only 推理允许用它们吗？</li><li>冻结 AGGP 是否意味着不参与计算、或者所有患者输出同一套高斯？为什么？</li></ol>
+<details><summary>1–4 题解析</summary><p>1. 像素记录输入亮度，特征是从输入计算的表示；没有新增 32 份真实测量。</p><p>2. [0,0.6,0]，最大变化在第二与第三个像素之间。</p><p>3. 0.35。对支持连续查询的表示，可在现有规则上增加查询点，不必因此重新训练；不是所有固定尺寸模型都能直接这样用。</p><p>4. 查询还依赖该患者的图像特征或表示。相同坐标并不决定所有图像的同一亮度。</p></details>
+<details><summary>5–7 题解析</summary><p>5. 中心控制位置，宽度控制延伸，方向控制朝向，强度控制贡献。两轴同宽时是圆，理想形状对旋转不敏感。</p><p>6. 根据表示和输出网格计算图像。16×16 到 64×64 增加查询位置，没有新增患者测量。</p><p>7. 200×200。本组名义 ×4 是频率退化协议，当前输出仍与 128×128 参考比较，不必为 512×512。</p></details>
+<details><summary>8–10 题解析</summary><p>8. 不能。程序可运行只证明输出能力；×6 属于范围外外推，需单独核验误差、结构、运动和失败案例。</p><p>9. 原方法的 HR 引导来自另一 MRI 对比，目标 HR 是需要恢复的参考答案。当前心脏 LR-only 推理不引入 HR 引导，也不能利用目标 HR；目标 HR 可用于训练监督和评测。</p><p>10. 都不是。冻结只表示权重不再更新，模块仍执行计算，不同输入特征仍可得到不同高斯参数。</p></details>
+<h3>一分钟复述</h3>
+<pre>LR 输入首先经过________，得到________。
+这些特征不是新测量，而是________。
+图像可以用连续坐标查询，也可以用许多________组成。
+每个高斯的________控制位置，________控制形状与朝向。
+渲染是________。
+任意倍率让输出更灵活，但准确性仍要________。
+原方法与心脏适配的重要区别是________。</pre>
+<details><summary>复述参考</summary><p>LR 经过编码器得到特征，这些特征是输入的计算表示。连续查询利用特征和位置预测亮度；高斯表示用多个平滑基元组合。中心控制位置，宽度和方向控制形状与朝向。渲染按指定网格把表示变成像素值。任意倍率支持灵活尺度，但需要在各尺度验证质量。原方法可利用已配准 HR 参考对比，当前心脏适配只有 LR 信息。</p></details>
+<h3>按错题安排补课</h3>
+<table><tr><th>错题</th><th>回看</th></tr><tr><td>1–2</td><td>特征、通道与相邻差值</td></tr><tr><td>3–4</td><td>坐标、函数与条件</td></tr><tr><td>5–6</td><td>高斯演示与渲染</td></tr><tr><td>7–8</td><td>两种倍率定义与外推</td></tr><tr><td>9–10</td><td>输入协议与冻结模块</td></tr></table>
+<p>8–10 分且能自己复述，可以进入下一天；5–7 分针对性补 15–30 分钟；0–4 分先完成纸笔和高斯演示，不急着增加 FM 公式。无论多少分，都不能把“可以任意输出”解释成“任意尺度都真实”。</p>
+<p>可以直接按这个格式发给我：</p>
+<pre>第三天学习反馈
+1–10 题答案：
+高斯演示的四个观察：
+我画的数据流（可用文字箭头）：
+最不理解的一句原文：</pre>
+
+<h2 id="sources">资料和证据入口</h2>
+<p>课程中的小数字、函数和高斯演示为教学设计，不是模型推理结果。关于本组方案的描述来自资料包；其中训练状态为 2026-10-17 快照，不代表今天状态。链接于 2026-10-25 核对。</p>
+<ul><li><a href="第一天_3小时入门课.html">第一天：MRI、频率与超分辨率</a>；<a href="第二天_3小时入门课.html">第二天：训练和评价</a>。</li><li><a href="01_工作全景与方法.md">本包：工作全景与方法</a>；<a href="03_数据与评价口径.md">数据与评价口径</a>。</li><li><a href="configs/ixi_stage1_reference.yml">IXI 第一阶段参考配置</a>；<a href="configs/ixi_stage2_reference.yml">第二阶段参考配置</a>。仅用于阅读，不要直接启动训练。</li><li><a href="https://arxiv.org/abs/2012.09161">Chen et al., LIIF, CVPR 2021</a>；<a href="https://yinboc.github.io/liif/">作者图像演示与视频</a>。</li><li><a href="https://github.com/Qiuhai-CV/GaussM2ASR">GaussM2ASR 官方仓库</a>：确认方法入口和训练阶段；具体复现实验需对应固定版本。</li></ul>
+<p class="small">课程独立保存，无外部脚本或字体依赖，无自动播放和训练进程。演示只在参数改变时计算。</p>
+</main>
+<script>
+(() => {
+  const root = document.getElementById('gaussian-lab');
+  const width = root.querySelector('#gwidth');
+  const angle = root.querySelector('#gangle');
+  const center = root.querySelector('#gcenter');
+  const grid = root.querySelector('#ggrid');
+  const dense = root.querySelector('#g-dense');
+  const sampled = root.querySelector('#g-sampled');
+  function draw() {
+    const sx = Number(width.value) / 100;
+    const sy = 0.08;
+    const theta = Number(angle.value) * Math.PI / 180;
+    const cx = Number(center.value) / 100;
+    const n = Number(grid.value);
+    const co = Math.cos(theta), si = Math.sin(theta);
+    function value(x,y) {
+      const dx=x-cx, dy=y-0.5;
+      const u=co*dx+si*dy, v=-si*dx+co*dy;
+      return Math.exp(-0.5*(u*u/(sx*sx)+v*v/(sy*sy)));
+    }
+    const dc=dense.getContext('2d');
+    const sc=sampled.getContext('2d');
+    if (!dc || !sc) return;
+    const pixels=dc.createImageData(256,256);
+    for (let y=0;y<256;y++) for (let x=0;x<256;x++) {
+      const k=4*(y*256+x), v=Math.round(255*value((x+0.5)/256,(y+0.5)/256));
+      pixels.data[k]=v; pixels.data[k+1]=v; pixels.data[k+2]=v; pixels.data[k+3]=255;
+    }
+    dc.putImageData(pixels,0,0);
+    const cell=256/n;
+    for (let y=0;y<n;y++) for (let x=0;x<n;x++) {
+      const v=Math.round(255*value((x+0.5)/n,(y+0.5)/n));
+      sc.fillStyle=`rgb(${v},${v},${v})`;
+      sc.fillRect(x*cell,y*cell,cell,cell);
+    }
+    root.querySelector('#gwidth-value').textContent=sx.toFixed(2);
+    root.querySelector('#gangle-value').textContent=angle.value;
+    root.querySelector('#gcenter-value').textContent=cx.toFixed(2);
+    root.querySelector('#g-caption').textContent=`${n}×${n}：${n*n} 个查询点`;
+    root.querySelector('#g-status').textContent=`第二主轴宽度固定为 0.08；中心 (${cx.toFixed(2)}, 0.50)；峰值 1；${sx===sy?'两主轴同宽，圆形':'两主轴不同宽，椭圆形'}。`;
+  }
+  for (const control of [width,angle,center,grid]) control.addEventListener('input',draw);
+  draw();
+})();
+</script></body></html>

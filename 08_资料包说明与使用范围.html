@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>08_资料包说明与使用范围 | 研究组新人资料包</title><link rel="stylesheet" href="assets/style.css"></head><body><header><div class="eyebrow">MRI RECONSTRUCTION · RESEARCH HANDOFF</div><div class="title">研究组新人资料包</div><p>可信的结构恢复 · 准确的心脏动态 · 可核对的实验证据</p></header><div class="shell"><nav aria-label="资料导航"><a href="index.html">从这里开始</a><a href="01_工作全景与方法.html">01 工作全景与方法</a><a href="02_最新结果与证据.html">02 最新结果与证据</a><a href="03_数据与评价口径.html">03 数据与评价口径</a><a href="04_代码地图与环境.html">04 代码地图与环境</a><a href="05_新人第一周建议.html">05 新人第一周建议</a><a href="06_问题与后续方向.html">06 问题与后续方向</a><a href="07_论文与证据来源.html">07 论文与证据来源</a><a href="08_资料包说明与使用范围.html" class="active">08 资料包说明与使用范围</a><a href="09_十分钟介绍提纲.html">09 十分钟介绍提纲</a><a href="LICENSE_DATA.html">LICENSE DATA</a><a href="完整阅读.html">连续阅读 / 打印</a><small>状态快照<br>2026-10-17T12:20:21+08:00<br><br>先完整解压，再打开网页。<br>本页为离线资料，不会自动更新。</small></nav><main><h1>资料包说明与使用范围</h1>
+<p>版本日期：2026-10-17。实验快照：2026-10-17T12:20:21+08:00（Asia/Shanghai）。用途：组内新人了解研究背景、当前进度和代码入口。</p>
+<h2>包内结构</h2>
+<pre><code>index.html                    离线首页
+完整阅读.html                  连续阅读、浏览器打印
+00_从这里开始.md ～ 09_...md     可编辑原稿，图片均用相对路径
+assets/                       研究地图、验证曲线、汇总结果和 ACDC 派生图
+evidence/                     汇总 CSV、训练快照、环境与来源索引
+configs/                      路径已替换的 IXI 参考 YAML
+tools/                        标准库 CPU 阅读与完整性检查脚本
+MANIFEST.csv                  文件类型、大小和哈希
+SHA256SUMS.txt                 包内文件完整性校验
+LICENSE_DATA.md               ACDC 图像归属与使用条件</code></pre>
+<p>原始医学数据、患者级清单、逐帧数据、检查点/推理权重、私有交流记录均保留在研究服务器。这里提供经过筛选的介绍和汇总证据。参考配置含路径占位符，资料包不是完整可运行的训练发行版。</p>
+<h2>图像与数据使用</h2>
+<p><code>assets/acdc_reconstruction.png</code> 和 <code>assets/acdc_cine.gif</code> 是公开 ACDC 数据生成的派生展示；已检查画面没有姓名、病历号或患者编号标签，导出时去除了附加注释元数据。它们仍受 ACDC 原许可约束：<strong>CC BY-NC-SA 4.0，仅限非商业科学研究</strong>。引用 Bernard et al., IEEE TMI 2018, doi:10.1109/TMI.2018.2837502。许可全文链接和归属见 <a href="LICENSE_DATA.html">LICENSE_DATA.md</a>。</p>
+<p>研究地图、训练曲线和汇总结果图由本地实验汇总信息生成。任何对外研究主张均应回到对应实验协议和原始审计记录；本包未建立临床结论。</p>
+<h2>版本与维护</h2>
+<p>首页数字和 JSON/CSV 是冻结快照。后续更新时，应同时更新时间、正文、图表和哈希；保留旧版本，便于讨论同一份证据。<code>MANIFEST.csv</code> 记录除清单与校验文件自身以外的文件；<code>SHA256SUMS.txt</code> 覆盖包括清单在内的其他全部文件。</p>
+<p>包内校验命令为 <code>python3 tools/check_package.py</code>。它检查哈希和 HTML/Markdown 本地文件链接，不验证远程网页、实验算法或医学结论。</p><div class="chapter-end"><a href="07_论文与证据来源.html">← 07_论文与证据来源</a><a href="09_十分钟介绍提纲.html">09_十分钟介绍提纲 →</a></div></main></div><footer>2026-10-17 版 · 非商业科研入组介绍 · ACDC 派生图：CC BY-NC-SA 4.0，Bernard et al., IEEE TMI 2018。详细归属见许可说明。</footer></body></html>

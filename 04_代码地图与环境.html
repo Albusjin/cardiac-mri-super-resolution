@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>04_代码地图与环境 | 研究组新人资料包</title><link rel="stylesheet" href="assets/style.css"></head><body><header><div class="eyebrow">MRI RECONSTRUCTION · RESEARCH HANDOFF</div><div class="title">研究组新人资料包</div><p>可信的结构恢复 · 准确的心脏动态 · 可核对的实验证据</p></header><div class="shell"><nav aria-label="资料导航"><a href="index.html">从这里开始</a><a href="01_工作全景与方法.html">01 工作全景与方法</a><a href="02_最新结果与证据.html">02 最新结果与证据</a><a href="03_数据与评价口径.html">03 数据与评价口径</a><a href="04_代码地图与环境.html" class="active">04 代码地图与环境</a><a href="05_新人第一周建议.html">05 新人第一周建议</a><a href="06_问题与后续方向.html">06 问题与后续方向</a><a href="07_论文与证据来源.html">07 论文与证据来源</a><a href="08_资料包说明与使用范围.html">08 资料包说明与使用范围</a><a href="09_十分钟介绍提纲.html">09 十分钟介绍提纲</a><a href="LICENSE_DATA.html">LICENSE DATA</a><a href="完整阅读.html">连续阅读 / 打印</a><small>状态快照<br>2026-10-17T12:20:21+08:00<br><br>先完整解压，再打开网页。<br>本页为离线资料，不会自动更新。</small></nav><main><h1>代码地图与环境</h1>
+<h2>去哪个目录</h2>
+<p>下列路径相对研究服务器工作区根目录，记为 <code>$WORKSPACE</code>。这些是服务器定位信息，资料包未复制完整实验仓库。</p>
+<div class="table-wrap"><table><thead><tr><th>目录</th><th>建议先看</th><th>再看代码</th></tr></thead><tbody>
+<tr><td><code>aas_mri/</code></td><td><code>PAPER_AND_RESEARCH_NOTES.md</code>（含历史设置，须结合本包最新结果）</td><td><code>upstream/</code>：作者网络与渲染器</td></tr>
+<tr><td><code>aas_mri/reproduction_20261016/</code></td><td><code>current_data_full_budget_20261016/REPORT_CN.md</code></td><td><code>scripts/current_entry.py</code>、<code>dual_gpu.py</code>、<code>run_current_pipeline.py</code></td></tr>
+<tr><td><code>aas_mri/cine/</code></td><td><code>README.md</code>、<code>DATA_AXIS_ERROR.md</code></td><td><code>run_study.py</code>、<code>infer_cine.py</code>、<code>audit_study.py</code></td></tr>
+<tr><td><code>training_runs/cardiac_20261016/</code></td><td><code>RESULTS_CN.md</code></td><td>交付索引、环境和审计记录</td></tr>
+<tr><td><code>flowgs_reproduction/</code></td><td><code>reports/implementation_mapping.md</code>；最新数值见 <code>training_runs/overnight_20261015/FLOWGS_REPORT.md</code></td><td><code>flowgs_repro/model.py</code>、<code>flow.py</code>、<code>inference.py</code>，<code>scripts/evaluate_revision.py</code></td></tr>
+<tr><td><code>fm_stadnet/</code></td><td><code>docs/design.md</code>，再读 README</td><td><code>fmstadnet/model.py</code>、<code>modules/codec.py</code>、<code>vector_field.py</code>、<code>ode.py</code></td></tr>
+<tr><td><code>loop_transformer_stadnet/</code></td><td><code>extracted/flow matching模型重构/STADNet-main/README_LoopSTADNet.md</code></td><td>同目录中的 Loop 基线代码</td></tr>
+<tr><td><code>STADNet/</code></td><td>上游 README</td><td><code>train_demo.py</code>、<code>test_demo.py</code>，作为历史基线</td></tr>
+<tr><td><code>心脏重建评价模型/</code></td><td><code>README.md</code>、<code>data/README_DATA.md</code></td><td><code>src/cli/smoke.py</code>、<code>src/</code>、<code>tests/</code></td></tr>
+</tbody></table></div>
+<p>工作区有多个独立项目，根目录不是统一 Git 仓库。修改、测试和提交应在实际所属项目中进行。旧 README 的“最新结果”可能已经被后续审计或新实验覆盖。</p>
+<h2>推荐的代码阅读顺序</h2>
+<p>心脏方向先看数据与推理约定，再追 <code>infer_cine.py → core.py → 官方模型/高斯渲染</code>，最后读 <code>run_study.py</code> 的对照与选模逻辑。推理输入是 <code>observed</code>；target 只用于训练损失或评测。</p>
+<p>FM 方向先看 <code>codec.py → condition.py → source.py → vector_field.py → ode.py → model.py</code>。Scope A 保留原条件分支，Scope B 用替代分支。Euler N 步通常 NFE=N；这里的 Heun N 步为 NFE=2N。需要一起报告端到端耗时。</p>
+<h2>当前运行环境参考</h2>
+<p>MRI 现有 <code>stadnet</code> 环境记录为 Python 3.11.16、PyTorch 2.11.0+cu128；Blackwell 上扩展编译工具链记录为 CUDA 13.2。包内 <a href="evidence/environment_reference.json">环境参考</a> 是已有实验记录，不能据环境名猜测包版本。</p>
+<p>上游 STADNet 的历史要求是 Python 3.6 / PyTorch 1.4，与当前环境不同；照其旧 README 全局降级会破坏现有工作。新环境应单独创建，先完成 CPU 检查，再验证 CUDA 扩展兼容性。</p>
+<h2>资料包内立刻可跑：只用标准库和 CPU</h2>
+<p>解压后，在资料包目录执行：</p>
+<pre><code>python3 tools/read_snapshot.py
+python3 tools/check_package.py</code></pre>
+<p>第一个脚本读取包内冻结快照，第二个校验所有文件哈希和本地链接。它们不连接研究服务器，也不启动模型训练。若系统的 Python 3 命令名为 <code>python</code>，将命令中的 <code>python3</code> 替换为 <code>python</code>。</p>
+<h2>进入服务器后的最小上手任务</h2>
+<p>确认已配置评价项目所需的 <code>cardiac-mra</code> 环境和依赖后，可以运行合成数据冒烟：</p>
+<pre><code>cd &quot;$WORKSPACE/心脏重建评价模型&quot;
+conda activate cardiac-mra
+CUDA_VISIBLE_DEVICES=&quot;&quot; python -m src.cli.smoke --config configs/ranker_mvp.yaml --synthetic</code></pre>
+<p>这是工程检查，不能作为医学效果实验。输出路径与依赖说明以项目 README 为准；如要安装依赖，在自己的隔离环境内执行。</p>
+<p>涉及代码变更时，按项目要求运行相关测试。评价 MVP 为 <code>python -m pytest -q</code>；FM-STADNet 为既定环境下的 <code>python -m pytest tests/ -q</code>。本资料整理没有重新运行这些模型测试；历史报告中的通过数是对应实验当时的记录。</p>
+<h2>当前长程训练的只读入口</h2>
+<pre><code>aas_mri/reproduction_20261016/current_data_full_budget_20261016/
+  stage1_status.json
+  stage2_status.json
+  pipeline_status.json
+  REPORT_CN.md
+  validation.jsonl</code></pre>
+<p>它们会更新；本包不会自动同步。当前训练占用物理 0、3 号 GPU。新人先读状态和报告，另建实验输出目录，再与负责人协调 GPU 时段；继续训练/重启应沿用现有控制器与恢复机制，避免重复启动同一任务。</p>
+<h2>参考配置怎么用</h2>
+<p>包内 <a href="configs/ixi_stage1_reference.yml">Stage 1</a> 和 <a href="configs/ixi_stage2_reference.yml">Stage 2</a> 保留本次参数，只将机器路径替换成 <code>&lt;RUN_DIR&gt;</code>。它们用于阅读训练协议，不能脱离源码、数据和启动器直接运行。YAML 中 <code>num_gpu: 1</code> 沿用上游单进程设置；实际双卡由外部模型并行启动器实现。</p><div class="chapter-end"><a href="03_数据与评价口径.html">← 03_数据与评价口径</a><a href="05_新人第一周建议.html">05_新人第一周建议 →</a></div></main></div><footer>2026-10-17 版 · 非商业科研入组介绍 · ACDC 派生图：CC BY-NC-SA 4.0，Bernard et al., IEEE TMI 2018。详细归属见许可说明。</footer></body></html>

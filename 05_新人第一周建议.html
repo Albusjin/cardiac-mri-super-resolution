@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>05_新人第一周建议 | 研究组新人资料包</title><link rel="stylesheet" href="assets/style.css"></head><body><header><div class="eyebrow">MRI RECONSTRUCTION · RESEARCH HANDOFF</div><div class="title">研究组新人资料包</div><p>可信的结构恢复 · 准确的心脏动态 · 可核对的实验证据</p></header><div class="shell"><nav aria-label="资料导航"><a href="index.html">从这里开始</a><a href="01_工作全景与方法.html">01 工作全景与方法</a><a href="02_最新结果与证据.html">02 最新结果与证据</a><a href="03_数据与评价口径.html">03 数据与评价口径</a><a href="04_代码地图与环境.html">04 代码地图与环境</a><a href="05_新人第一周建议.html" class="active">05 新人第一周建议</a><a href="06_问题与后续方向.html">06 问题与后续方向</a><a href="07_论文与证据来源.html">07 论文与证据来源</a><a href="08_资料包说明与使用范围.html">08 资料包说明与使用范围</a><a href="09_十分钟介绍提纲.html">09 十分钟介绍提纲</a><a href="LICENSE_DATA.html">LICENSE DATA</a><a href="完整阅读.html">连续阅读 / 打印</a><small>状态快照<br>2026-10-17T12:20:21+08:00<br><br>先完整解压，再打开网页。<br>本页为离线资料，不会自动更新。</small></nav><main><h1>新人第一周建议</h1>
+<p>以下是建议任务，具体方向和训练资源由组内讨论确定。第一周的目标是能解释现有证据，并交出一个可审查的小结果。</p>
+<div class="table-wrap"><table><thead><tr><th>时间</th><th>建议任务</th><th>可交付成果</th></tr></thead><tbody>
+<tr><td>第 1 天</td><td>阅读概览、最新结果和数据口径；运行包内 CPU 脚本</td><td>一页自己的理解：任务、输入、真值、结论、未决问题</td></tr>
+<tr><td>第 2 天</td><td>看官方论文方法图与公开代码；梳理 LR/guide/target 的流向</td><td>一张数据流图，标出推理时允许使用的输入</td></tr>
+<tr><td>第 3 天</td><td>用合成数据跑评价 MVP；阅读心脏推理与数据检查</td><td>一份运行记录：环境、命令、输入输出形状和失败原因</td></tr>
+<tr><td>第 4 天</td><td>从包内 CSV 独立重画 ACDC 结果；阅读患者聚合与审计代码</td><td>一张图和一段结论；明确为何时序方法未过门槛</td></tr>
+<tr><td>第 5 天</td><td>选一个待验证问题，写出对照与通过标准</td><td>一页小实验方案，组内确认后再安排计算资源</td></tr>
+</tbody></table></div>
+<h2>可选择的首个研究小任务</h2>
+<p><strong>A：复现口径核对。</strong> 对照论文、上游配置和本地长程设置，列出仍不一致的项及可能影响。交付一张差异表，区分执行一致性检查和效果验证。</p>
+<p><strong>B：心脏多帧信息诊断。</strong> 在验证集评估运动幅度、对齐残差和前景区域变化。先判断邻帧是否带来新信息，再决定是否增加模块。使用数据前完成组内访问与许可安排。</p>
+<p><strong>C：评价与可视化。</strong> 从已批准的汇总结果开始，建立统一图例、误差尺度、患者等权汇总和失败案例展示。每张图附协议和结论边界。</p>
+<p><strong>D：FM 计算预算分析。</strong> 先用合成数据检查 Euler/Heun 的 NFE 与实际调用次数，设计固定端到端预算的对比。避免把 K、步数、NFE 和 wall-clock 当作同一量。</p>
+<h2>每次实验记录模板</h2>
+<pre><code>问题与假设：
+相对基线只改变什么：
+推理可用输入 / 监督信号：
+数据版本、患者划分和使用许可：
+代码提交 / 环境 / 配置：
+种子、初始化、步数、选模规则：
+主指标、通过门槛与停止条件：
+验证集结果 / 图像与失败案例：
+是否已读取 TEST、何时冻结方案：
+运行命令、日志路径与结论：</code></pre>
+<h2>入组交流时值得确认的内容</h2>
+<p>最终部署输入是 LR-only Cine，还是能够拿到可靠 HR 参考？目标是合成超分、真实加速重建，还是后续定量任务？有哪些已核验数据和可用 GPU 时段？评价优先级是空间保真、时间准确性、下游任务还是推理速度？</p>
+<p>这些答案将决定首个小实验的选择，本包不预设新人承担哪条路线。</p><div class="chapter-end"><a href="04_代码地图与环境.html">← 04_代码地图与环境</a><a href="06_问题与后续方向.html">06_问题与后续方向 →</a></div></main></div><footer>2026-10-17 版 · 非商业科研入组介绍 · ACDC 派生图：CC BY-NC-SA 4.0，Bernard et al., IEEE TMI 2018。详细归属见许可说明。</footer></body></html>

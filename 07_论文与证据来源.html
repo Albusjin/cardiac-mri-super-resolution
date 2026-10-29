@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>07_论文与证据来源 | 研究组新人资料包</title><link rel="stylesheet" href="assets/style.css"></head><body><header><div class="eyebrow">MRI RECONSTRUCTION · RESEARCH HANDOFF</div><div class="title">研究组新人资料包</div><p>可信的结构恢复 · 准确的心脏动态 · 可核对的实验证据</p></header><div class="shell"><nav aria-label="资料导航"><a href="index.html">从这里开始</a><a href="01_工作全景与方法.html">01 工作全景与方法</a><a href="02_最新结果与证据.html">02 最新结果与证据</a><a href="03_数据与评价口径.html">03 数据与评价口径</a><a href="04_代码地图与环境.html">04 代码地图与环境</a><a href="05_新人第一周建议.html">05 新人第一周建议</a><a href="06_问题与后续方向.html">06 问题与后续方向</a><a href="07_论文与证据来源.html" class="active">07 论文与证据来源</a><a href="08_资料包说明与使用范围.html">08 资料包说明与使用范围</a><a href="09_十分钟介绍提纲.html">09 十分钟介绍提纲</a><a href="LICENSE_DATA.html">LICENSE DATA</a><a href="完整阅读.html">连续阅读 / 打印</a><small>状态快照<br>2026-10-17T12:20:21+08:00<br><br>先完整解压，再打开网页。<br>本页为离线资料，不会自动更新。</small></nav><main><h1>论文与证据来源</h1>
+<h2>首先阅读的论文和公开入口</h2>
+<ol>
+<li>Yan et al. <strong>Adaptive Anisotropic Gaussian Splatting for Multi-contrast MRI Arbitrary-Scale Super-Resolution with Anatomy Guidance</strong>，CVPR 2026。<a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Yan_Adaptive_Anisotropic_Gaussian_Splatting_for_Multi-contrast_MRI_Arbitrary-Scale_Super-Resolution_with_CVPR_2026_paper.pdf">CVF 原文 PDF</a>；<a href="https://github.com/Qiuhai-CV/GaussM2ASR">官方代码</a>。先看输入假设、方法、两阶段训练、Table 2 和实验预处理。当前固定 revision：<code>2f0acd51d87520d2547303be4886e75d4898214c</code>。</li>
+<li>Bernard et al. <strong>Deep Learning Techniques for Automatic MRI Cardiac Multi-structures Segmentation and Diagnosis: Is the Problem Solved?</strong> IEEE TMI 37(11), 2514–2525, 2018。<a href="https://doi.org/10.1109/TMI.2018.2837502">DOI</a>；<a href="https://www.creatis.insa-lyon.fr/Challenge/acdc/">ACDC 官方入口</a>。重点了解数据定义和标签，不把原挑战任务当作本组 SR 实验。</li>
+<li>STADNet、FM 和 Loop 的具体实现与引用入口见服务器各项目 README、<code>fm_stadnet/docs/design.md</code> 及 FlowGS 的 <code>reports/implementation_mapping.md</code>。本包只总结已有工作，不补写未经核验的论文书目信息。</li>
+</ol>
+<p>论文和仓库在线阅读需要网络，包内介绍、指标与图表可完全离线阅读。</p>
+<h2>数字从哪里来</h2>
+<div class="table-wrap"><table><thead><tr><th>本包结论</th><th>包内证据</th><th>研究服务器上的主要来源</th></tr></thead><tbody>
+<tr><td>当前 IXI 两阶段进度、GPU 与验证</td><td><a href="evidence/ixi_training_snapshot.json">状态快照</a>、<a href="evidence/ixi_stage2_validation_x4.csv">验证 CSV</a></td><td><code>aas_mri/reproduction_20261016/current_data_full_budget_20261016/{stage1_status.json,stage2_status.json,validation.jsonl}</code></td></tr>
+<tr><td>网络/参数配置核对</td><td><a href="evidence/ixi_config_fidelity.json">配置一致性记录</a>、<a href="configs/ixi_stage2_reference.yml">Stage 2 参考配置</a></td><td>同上目录 <code>config_fidelity.json</code>、<code>configs/</code></td></tr>
+<tr><td>双卡执行一致性</td><td><a href="evidence/dual_gpu_full_input_check.json">原检查 JSON</a></td><td><code>aas_mri/reproduction_20261016/dual_gpu_full_input_async_split4_20261016/result.json</code></td></tr>
+<tr><td>ACDC 结果、置信区间和负结果</td><td><a href="evidence/acdc_test_aggregate.csv">汇总 CSV</a></td><td><code>training_runs/cardiac_20261016/RESULTS_CN.md</code>；<code>aas_mri/cine/runs/acdc_20261016/evaluation/</code></td></tr>
+<tr><td>ACDC 示例图与动图</td><td><a href="assets/acdc_reconstruction.png">重建图</a>、<a href="assets/acdc_cine.gif">动图</a></td><td>上述 <code>evaluation/reconstruction_errors.png</code>、<code>cine.gif</code></td></tr>
+<tr><td>旧数据作废原因</td><td><a href="03_数据与评价口径.html">数据说明</a></td><td><code>aas_mri/cine/DATA_AXIS_ERROR.md</code>、<code>training_runs/cardiac_20261016/DATA_VALIDITY_ALERT.md</code></td></tr>
+<tr><td>FlowGS 扩预算结果</td><td><a href="evidence/flowgs_aid_test_aggregate.csv">汇总 CSV</a></td><td><code>training_runs/overnight_20261015/FLOWGS_REPORT.md</code></td></tr>
+<tr><td>实验依赖版本</td><td><a href="evidence/environment_reference.json">环境记录</a></td><td><code>training_runs/cardiac_20261016/environment.json</code></td></tr>
+</tbody></table></div>
+<p>CSV 中 ACDC 与 FlowGS 数字按已完成报告的精度抄录，未重新计算逐患者统计；IXI 验证 CSV 来自冻结时的日志。主报告来源的路径与哈希见 <a href="evidence/source_index.json">source_index.json</a>。动态源文件会继续变化，核对本包自身请用 <code>SHA256SUMS.txt</code>。</p>
+<h2>哪些旧文档要结合日期看</h2>
+<p><code>aas_mri/PAPER_AND_RESEARCH_NOTES.md</code> 中的“今晚”指较早 128 输入、4k+12k 步实验，现已另起 256 输入、40k+500k 的长程任务。FlowGS 旧 <code>reproduction_status.md</code> 可能只记录资源而未记录后续训练。评价 MVP 旧小样本结果和历史“心脏”命名需要结合数据审计理解。</p>
+<p>本包优先采用 2026-10-16 完成的 ACDC 结果，以及 2026-10-17 的长程状态快照。所有历史测试通过数均是来源报告当时记录，本次仅执行资料完整性验证。</p><div class="chapter-end"><a href="06_问题与后续方向.html">← 06_问题与后续方向</a><a href="08_资料包说明与使用范围.html">08_资料包说明与使用范围 →</a></div></main></div><footer>2026-10-17 版 · 非商业科研入组介绍 · ACDC 派生图：CC BY-NC-SA 4.0，Bernard et al., IEEE TMI 2018。详细归属见许可说明。</footer></body></html>
