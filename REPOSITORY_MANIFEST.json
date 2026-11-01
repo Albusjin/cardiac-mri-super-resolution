@@ -3,9 +3,14 @@
   "algorithm": "sha256",
   "files": [
     {
+      "path": ".gitattributes",
+      "bytes": 139,
+      "sha256": "862932784c565ba3e2cba22e498bed30ca72a64994784c26c1c010b95f5512f0"
+    },
+    {
       "path": ".gitignore",
-      "bytes": 317,
-      "sha256": "69ec9066e9a3872a9a3960a41735dab35842ac03387c49e8513c8a7b705ded25"
+      "bytes": 342,
+      "sha256": "1e5bf19971b45df69f3389071cf16c8be0536d1f7da9dd3d402a518647eccbed"
     },
     {
       "path": "00_从这里开始.html",
@@ -114,8 +119,8 @@
     },
     {
       "path": "HANDOFF.md",
-      "bytes": 4458,
-      "sha256": "dbd1f1e4229a372177ae9e12fc206006bd78d54384c7e7b5d6d8ec702754ac32"
+      "bytes": 5195,
+      "sha256": "d77726f66eab557c474b9d4f29d6e6cf1be0bfbbc53c9e26398662f79693bced"
     },
     {
       "path": "LICENSE_DATA.html",
@@ -139,8 +144,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5345,
-      "sha256": "ea6c0da2fc08dd646b6a5cc24b045c3f113b930ae6ae3bb13b60e9e010b2293a"
+      "bytes": 6720,
+      "sha256": "ee70ce4bac9843f472aaeedf9e633b4c998cc912fffb571e84b8903aca51a237"
     },
     {
       "path": "README.txt",
@@ -199,8 +204,8 @@
     },
     {
       "path": "docs/归档范围与来源.md",
-      "bytes": 1977,
-      "sha256": "980383adab60726eb586fff9616ec037184ca4b021abab1983cdf8726375cff6"
+      "bytes": 2476,
+      "sha256": "91c62cc6d1abc090b789543734090f8b480f311c9e44eb7003bd91316800f331"
     },
     {
       "path": "evidence/acdc_test_aggregate.csv",
@@ -269,8 +274,8 @@
     },
     {
       "path": "tools/verify_repository.py",
-      "bytes": 3025,
-      "sha256": "c8b40edc3169e4bb9442af2ae3793639669b646f3d4c91e168f97c1ec6b339ff"
+      "bytes": 3162,
+      "sha256": "4c8d7c706d0ccdde3b79dfbb94fbbf6379a35ff3a2988a90d5398e67a2d00ec7"
     },
     {
       "path": "完整阅读.html",
@@ -363,6 +368,11 @@
       "sha256": "947533b562f8bd8fb560040a04ca8ae996bff56a172b7fda4da7a04f589e9a2b"
     },
     {
+      "path": "科研工作台/实验方案/LIIF_P0协议审计执行清单_2026-10-29.md",
+      "bytes": 15925,
+      "sha256": "3881a0f87c37ff1b1efba67557ed5cd2c1f3b05c666fdea9cc1e011387626a6d"
+    },
+    {
       "path": "科研工作台/实验方案/LIIF验证方案与项目推进计划_2026-10-29.md",
       "bytes": 16105,
       "sha256": "415124bf238731422ca6fe478a17e3a1df5aa903d61e40d4f8de43723b085d87"
@@ -371,6 +381,16 @@
       "path": "科研工作台/工程记录/FlowGS独立实现映射_2026-10-14.md",
       "bytes": 9455,
       "sha256": "f7f2fa591853277d659141c44149ece632f194114b0f26726488c21aa2210cca"
+    },
+    {
+      "path": "科研工作台/工程记录/GitHub待保存审计_2026-11-01.md",
+      "bytes": 5465,
+      "sha256": "a9908d404a6c20ccd281aabc846427cf9d21075350373ddd380768a51f10d575"
+    },
+    {
+      "path": "科研工作台/工程记录/GitHub整理与保存记录_2026-11-01.md",
+      "bytes": 3230,
+      "sha256": "996a0f5970e17c4fbdd8876787e686d01b60448b3ed2ebd75dfa8765dfc9f65c"
     },
     {
       "path": "科研工作台/工程记录/服务器状态摘要_2026-10-28.md",
@@ -569,8 +589,8 @@
     },
     {
       "path": "科研工作台/项目状态.md",
-      "bytes": 4132,
-      "sha256": "b4f18063232ea619f2be1100f8e2c81090336a38d4f29479a59c7d2a71a7b1aa"
+      "bytes": 5125,
+      "sha256": "bd73e6103cba3729c58a70572d5387f0aae946a6819c3597214f88e353cc1317"
     },
     {
       "path": "第一天_3小时入门课.html",

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MRI 科研工作流"
+  short_description: "串联医学影像文献检索、基线选型、实验设计、证据分析和研究汇报"
+  default_prompt: "使用 $mri-research-workflow 读取当前项目状态，推进文献筛选和基线选型，保存可复查的来源与下一步实验计划。"

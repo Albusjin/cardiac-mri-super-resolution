@@ -1,0 +1,57 @@
+{
+  "snapshot_at": "2026-10-17T12:20:21+08:00",
+  "note": "状态文件各自带更新时间；一次性只读快照，非实时监控。验证不等于最终测试。",
+  "upstream_revision": "2f0acd51d87520d2547303be4886e75d4898214c",
+  "data": {
+    "dataset": "IXI local subset",
+    "subjects": [
+      96,
+      12,
+      12
+    ],
+    "pairs": [
+      1852,
+      226,
+      227
+    ],
+    "resolution": [
+      256,
+      256
+    ],
+    "registration": "SimpleITK affine, not author FSL-FLIRT"
+  },
+  "stages": {
+    "stage1": {
+      "state": "completed",
+      "iteration": 40000,
+      "total_iterations": 40000,
+      "updated_at": "2026-10-17 04:37:14 +0800",
+      "gpu": "0,3",
+      "seconds_per_step": 1.0508833659690513,
+      "last_committed_checkpoint": 40000,
+      "validation": {
+        "iter": 40002,
+        "psnr": 61.59685900033332,
+        "ssim": 0.9999478051276544
+      },
+      "model_parallel": true,
+      "global_batch_size": 1
+    },
+    "stage2": {
+      "state": "training",
+      "iteration": 25320,
+      "total_iterations": 500000,
+      "updated_at": "2026-10-17 12:20:14 +0800",
+      "gpu": "0,3",
+      "model_parallel": true,
+      "global_batch_size": 1,
+      "seconds_per_step": 1.044786320604158,
+      "last_committed_checkpoint": 24000,
+      "validation": {
+        "iter": 24000,
+        "psnr": 27.78107711155934,
+        "ssim": 0.8893025360764844
+      }
+    }
+  }
+}

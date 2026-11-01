@@ -1,0 +1,71 @@
+{
+  "read_at": "2026-10-17T12:20:21+08:00",
+  "note": "来源路径相对研究服务器工作区；动态源文件哈希对应此处读取时刻，不等同于更早状态读取字节。包内快照的完整性以 SHA256SUMS.txt 为准。",
+  "sources": [
+    {
+      "source_relative_path": "training_runs/cardiac_20261016/RESULTS_CN.md",
+      "sha256_at_read": "0a249a4d70f532509937bd9a39843e5dfaa908fd28cd01d8eb1aa9fe8d12ce65",
+      "live_source": false
+    },
+    {
+      "source_relative_path": "training_runs/overnight_20261015/FLOWGS_REPORT.md",
+      "sha256_at_read": "64b592bc97464c6046c15e227e2faf2c0e9f0996bf9771e5b0d5ae392464b49a",
+      "live_source": false
+    },
+    {
+      "source_relative_path": "aas_mri/cine/DATA_AXIS_ERROR.md",
+      "sha256_at_read": "cf2fe94444800bdac70e589bb622006ae3b3082f8cf4fe4f046e42d2bb058a45",
+      "live_source": false
+    },
+    {
+      "source_relative_path": "aas_mri/cine/README.md",
+      "sha256_at_read": "bfed769fe39c8cbaa41245325cac046fe783bdad94cc10e6f89ea546a31062d8",
+      "live_source": false
+    },
+    {
+      "source_relative_path": "aas_mri/reproduction_20261016/current_data_full_budget_20261016/stage1_status.json",
+      "sha256_at_read": "22797da7f1a6a267b7af262781014dc59024e4f87c5ecc02eb0723a9d58147c4",
+      "live_source": true
+    },
+    {
+      "source_relative_path": "aas_mri/reproduction_20261016/current_data_full_budget_20261016/stage2_status.json",
+      "sha256_at_read": "af049ee18734058d89a2c5fa8d62bf4a4b19af0aef5a028030a5b7e8b50b145f",
+      "live_source": true
+    },
+    {
+      "source_relative_path": "aas_mri/reproduction_20261016/current_data_full_budget_20261016/validation.jsonl",
+      "sha256_at_read": "19954efed7a0da8d90d6bffff2a67b8a2dcd6508b413771fccf70a222f780607",
+      "live_source": true
+    },
+    {
+      "source_relative_path": "aas_mri/reproduction_20261016/current_data_full_budget_20261016/configs/stage1.yml",
+      "sha256_at_read": "02b79a240c5b0d0a13b66c9b9da04cc5b7e0bb91f118799a3fe064d3d3480bbf",
+      "live_source": false
+    },
+    {
+      "source_relative_path": "aas_mri/reproduction_20261016/current_data_full_budget_20261016/configs/stage2.yml",
+      "sha256_at_read": "6e64d958c19eec136c03b129e8dc06310e544de5b264c9623574a35d8b724491",
+      "live_source": false
+    },
+    {
+      "source_relative_path": "fm_stadnet/README.md",
+      "sha256_at_read": "ad675239a552f517484c230f4a88e8ff7dfb098c63c112b272d822125afcd5ef",
+      "live_source": false
+    },
+    {
+      "source_relative_path": "fm_stadnet/docs/design.md",
+      "sha256_at_read": "5a5c812804352e1959a585a06c0f35f8f8400008f04e9a92caa2ac18453912e6",
+      "live_source": false
+    },
+    {
+      "source_relative_path": "心脏重建评价模型/docs/PROJECT_STATUS.md",
+      "sha256_at_read": "ee47e4cd0c257bbd72398c711402b6a03ab8d04051464c30afadb4bd94015f4a",
+      "live_source": false
+    },
+    {
+      "source_relative_path": "aas_mri/cine/raw_acdc/LICENSE_TERMS.md",
+      "sha256_at_read": "7bcd6e544e0b367e91539f80393af751cbb3450f4629308a6eb257ca4944732d",
+      "live_source": false
+    }
+  ]
+}

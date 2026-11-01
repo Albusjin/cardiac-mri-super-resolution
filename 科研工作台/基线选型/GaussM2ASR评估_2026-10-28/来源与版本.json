@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-28",
+  "main_sha256": "43d5e0b38d9c8e30a45228250a9ce75ec030fba39d13cbd569518e74de990790",
+  "supplement_sha256": "72060d4a58cb1765c22a9fa9b103cb5d0814b5c8da0ab3e7396613ae5000a0cc",
+  "supplement_pages": 7,
+  "code_repository": "Qiuhai-CV/GaussM2ASR",
+  "code_sha": "2f0acd51d87520d2547303be4886e75d4898214c",
+  "packet_files": [
+    "basicsr__archs__aggp_arch.py",
+    "basicsr__data__continuous_bicubic_downsample_dataset.py",
+    "basicsr__models__gaussm2asr_model.py",
+    "main_page_4.png",
+    "main_page_7.png",
+    "main_page_8.png",
+    "main_text.txt",
+    "options__train__paper__train_GaussM2ASR_stage1.yml",
+    "options__train__paper__train_GaussM2ASR_stage2.yml",
+    "supplement_text.txt"
+  ],
+  "source_urls": {
+    "main": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yan_Adaptive_Anisotropic_Gaussian_Splatting_for_Multi-contrast_MRI_Arbitrary-Scale_Super-Resolution_with_CVPR_2026_paper.pdf",
+    "supplement": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Yan_Adaptive_Anisotropic_Gaussian_CVPR_2026_supplemental.pdf"
+  },
+  "post_review_additional_source": {
+    "path": "basicsr/losses/basic_loss.py",
+    "ref": "2f0acd51d87520d2547303be4886e75d4898214c",
+    "lines": "1–125",
+    "timing": "读取于三份报告冻结后，仅用于编辑审计"
+  },
+  "frozen_report_sha256": {
+    "Reviewer_1_冻结.md": "0d70ae4a28c37a5c74bfb2accfdca92133c5a731032d980eae1e7053e3ee6a62",
+    "Reviewer_2_冻结.md": "b29110ee5287e7df5a07ee9bec0b2aa723189bad6b1b6e3b5e56359b5664abfd",
+    "Reviewer_3_冻结.md": "31f960da9d1696380687f00b63a41f0b73eeed3ec3ffa7e6593ff85bcd9f80d3"
+  },
+  "packet_note": "packet_files为审读时临时文件名；临时提取文本/渲染图/代码副本在交付后清理。原始PDF、固定源链接、冻结报告及审计记录保留。"
+}

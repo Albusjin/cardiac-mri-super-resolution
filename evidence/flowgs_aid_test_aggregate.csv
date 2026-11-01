@@ -1,0 +1,4 @@
+method,lpips_lower_better,fid_lower_better,psnr_db,ssim
+bicubic,0.4346,150.75,29.195,0.74549
+shortcut_nfe1,0.196,227.58,28.589,0.73035
+pure_fm_nfe1,0.1786,196.99,29.089,0.74735

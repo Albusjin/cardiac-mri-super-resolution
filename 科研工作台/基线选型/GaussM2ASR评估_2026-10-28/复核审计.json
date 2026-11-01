@@ -1,0 +1,212 @@
+{
+  "audit_date": "2026-10-28",
+  "performed_after_all_reports_frozen": true,
+  "frozen_report_sha256": {
+    "Reviewer_1_冻结.md": "0d70ae4a28c37a5c74bfb2accfdca92133c5a731032d980eae1e7053e3ee6a62",
+    "Reviewer_2_冻结.md": "b29110ee5287e7df5a07ee9bec0b2aa723189bad6b1b6e3b5e56359b5664abfd",
+    "Reviewer_3_冻结.md": "31f960da9d1696380687f00b63a41f0b73eeed3ec3ffa7e6593ff85bcd9f80d3"
+  },
+  "table2_transcription": {
+    "IXI": {
+      "ours_psnr": [
+        46.62,
+        38.77,
+        34.25,
+        32.03,
+        28.81,
+        26.89
+      ],
+      "best_comparator_psnr": [
+        42.81,
+        38.43,
+        33.54,
+        30.98,
+        28.33,
+        26.58
+      ],
+      "ours_ssim": [
+        0.9939,
+        0.9798,
+        0.9565,
+        0.935,
+        0.8745,
+        0.8295
+      ],
+      "best_comparator_ssim": [
+        0.9864,
+        0.9699,
+        0.9367,
+        0.9084,
+        0.8684,
+        0.8261
+      ]
+    },
+    "BraTS": {
+      "ours_psnr": [
+        45.39,
+        41.22,
+        37.14,
+        34.65,
+        31.63,
+        29.85
+      ],
+      "best_comparator_psnr": [
+        41.51,
+        40.03,
+        35.86,
+        33.32,
+        31.18,
+        29.54
+      ],
+      "ours_ssim": [
+        0.9959,
+        0.9901,
+        0.9769,
+        0.9621,
+        0.9444,
+        0.9225
+      ],
+      "best_comparator_ssim": [
+        0.9941,
+        0.9878,
+        0.9715,
+        0.9543,
+        0.9337,
+        0.9143
+      ]
+    },
+    "fastMRI": {
+      "ours_psnr": [
+        34.91,
+        33.18,
+        31.64,
+        30.53,
+        28.11,
+        26.69
+      ],
+      "best_comparator_psnr": [
+        32.73,
+        32.17,
+        30.74,
+        28.76,
+        26.72,
+        26.06
+      ],
+      "ours_ssim": [
+        0.8832,
+        0.8275,
+        0.7733,
+        0.741,
+        0.7008,
+        0.6728
+      ],
+      "best_comparator_ssim": [
+        0.8724,
+        0.8124,
+        0.7512,
+        0.7218,
+        0.6952,
+        0.6672
+      ]
+    }
+  },
+  "scope": "三份报告冻结后的独立编辑核对；未向评审反馈或修改冻结报告",
+  "findings": [
+    {
+      "audit_id": "AUD-01",
+      "status": "passed",
+      "location": "正文PDF第7页Table2",
+      "claim_pointer": "各数据集和所列倍率上PSNR/SSIM领先",
+      "evidence_pointer": "Table2逐列最大对照与Ours，倍率1.5/2/3/4/5/6",
+      "check": "人工核对原文表后转录最强对照，比较18组PSNR和18组SSIM，并核对0到1范围",
+      "result": "36项Ours均较高；×4 PSNR相对最佳对照分别提高1.05/1.33/1.77 dB",
+      "impact": "支持表内平均指标排名；不等于显著性或患者级临床收益",
+      "resolution_test": "公开逐患者指标和选择/聚合协议后再评估不确定性",
+      "reviewer_overlap": "R1总体评价；R2总体评价；R3总体评价"
+    },
+    {
+      "audit_id": "AUD-02",
+      "status": "passed",
+      "location": "补充PDF第1页§9和第2页Table3",
+      "claim_pointer": "比DINet省时间和显存；比dual-arb省约23.8%显存",
+      "evidence_pointer": "×4时间681→320ms；显存20.13→2.14GB；dual-arb2.81→2.14GB",
+      "check": "重算百分比并检查全表排序",
+      "result": "比DINet时间减少约53.01%；比dual-arb显存减少23.843%；本文不是全表最快或最省显存",
+      "impact": "效率优势有明确比较对象；不能外推为最快或Cine实时整流程",
+      "resolution_test": "补精度、预热/同步、统计口径、配准和完整管线耗时",
+      "reviewer_overlap": "R3-m2；其他评审也区分推理与训练资源"
+    },
+    {
+      "audit_id": "AUD-03",
+      "status": "aggregation_ambiguity",
+      "location": "正文PDF第5页Table1/§4.1，第7页Table2；补充§10",
+      "claim_pointer": "用训练测试计数与汇总分数描述方法优势",
+      "evidence_pointer": "Train/Test为500/77、600/200、500/53；正文讨论体积中间15%切片；结果未列患者级区间",
+      "check": "检查计数单位、患者互斥划分、验证集、切片权重和随机种子是否明确",
+      "result": "现有文本不足以完整重建上述协议；不能据此认定泄漏或把切片当独立患者",
+      "impact": "优势稳定性和小幅消融差异仍不确定",
+      "resolution_test": "公布受试者清单/分组、VAL选择规则和患者配对结果",
+      "reviewer_overlap": "R2-M1"
+    },
+    {
+      "audit_id": "AUD-04",
+      "status": "provenance_gap",
+      "location": "补充PDF第1–2页§10.1–10.2/Table4–5",
+      "claim_pointer": "对错位稳健且提升边界/分割表现",
+      "evidence_pointer": "表4合成non-rigid和PD-T2；表5Dice0.932等；相邻文字未完整定义分割器、标签、边界容差和扰动幅度",
+      "check": "核查是否只有缺乏细节而非缺乏实验",
+      "result": "确有补充实验，协议不足以完整复核或支持较强临床保真推断",
+      "impact": "保留已报告结果，并收窄其适用范围",
+      "resolution_test": "给出扰动生成和幅度、分割任务/模型/标签/训练隔离、患者级区间",
+      "reviewer_overlap": "R1-M2；R2-M2"
+    },
+    {
+      "audit_id": "AUD-05",
+      "status": "confirmed_internal_error",
+      "location": "正文PDF第5页式12–13；aggp_arch.py第69–94行",
+      "claim_pointer": "以二值零掩码后Softmax实现Top-T稀疏注意力",
+      "evidence_pointer": "公式Softmax(M⊙W)；代码torch.where(mask>0,attn,-inf)后Softmax",
+      "check": "手算W=[2,-3]、M=[1,0]",
+      "result": "原公式未选项权重1/(exp(2)+1)=0.1192029而非0；代码负无穷遮罩才为0",
+      "impact": "确认局部公式记载不一致，代码体现预期稀疏功能；不证明结果表错误",
+      "resolution_test": "将式13改为负无穷加性掩码等与代码一致的表达",
+      "reviewer_overlap": "R1-m1；R3-m3"
+    },
+    {
+      "audit_id": "AUD-06",
+      "status": "confirmed_internal_error",
+      "location": "正文PDF第5页§3.3；模型代码第258行；编辑追加读取basic_loss.py第13–15/45–53行",
+      "claim_pointer": "频域损失为两个幅度谱之间的MAE",
+      "evidence_pointer": "代码直接把两个fft2复数结果交给L1Loss；L1Loss进一步调用F.l1_loss，没有先取两边幅度",
+      "check": "静态追踪调用；用复数1与i展示两种目标不等价，未运行PyTorch或训练",
+      "result": "幅度差为0，复数距离为sqrt(2)；公开调用与幅度谱差定义不一致。实际表格对应何实现仍需训练版本/权重说明",
+      "impact": "确认定义与公开实现口径不同，不由此判定发表指标无效",
+      "resolution_test": "作者明确实际训练目标并提供匹配配置/权重；必要时比较两目标",
+      "reviewer_overlap": "R3-M1；本项具体损失实现是在三份报告冻结后追加核查，未回灌评审"
+    },
+    {
+      "audit_id": "AUD-07",
+      "status": "provenance_gap",
+      "location": "正文PDF第5页§4.1；stage1/stage2训练YAML",
+      "claim_pointer": "两阶段训练且训练500k iterations",
+      "evidence_pointer": "公开stage1为40000，stage2为500000；两者warmup2000；正文未逐阶段明确步数",
+      "check": "对齐阶段预算、调度和冻结策略",
+      "result": "原文日程不足以逐项确定；不把公开540k合计直接当作发表预算造假的证据",
+      "impact": "独立复现前需冻结两阶段真实配置",
+      "resolution_test": "给出原实验各阶段步数、初始化、调度和权重来源",
+      "reviewer_overlap": "R3-m1"
+    },
+    {
+      "audit_id": "AUD-08",
+      "status": "not_assessable",
+      "location": "本文评估的复现边界",
+      "claim_pointer": "是否已独立复现作者最终表格",
+      "evidence_pointer": "本轮仅原文/补充/公开代码静态阅读，无模型执行",
+      "check": "确认本轮没有训练、权重下载或数值复现实验",
+      "result": "未运行复现，不是复现成功，也不是复现失败",
+      "impact": "不能对作者结果的独立可复现性下确定判断",
+      "resolution_test": "服务器在对齐数据/退化/输入/预算下运行并保留版本记录",
+      "reviewer_overlap": "三份报告均注明未运行实验"
+    }
+  ]
+}

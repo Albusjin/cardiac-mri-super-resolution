@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "generated_at": "2026-10-28T01:57:32.549Z",
+  "request": {
+    "topic": "",
+    "title": "Flow-based Gaussian Splatting for Continuous-Scale Remote Sensing Image Super-Resolution",
+    "dois": [],
+    "pdf_url": "https://arxiv.org/pdf/2605.22147v1",
+    "si_requested": true,
+    "language_override": "",
+    "route_override": "",
+    "source_url": "",
+    "api_fallback_web": null,
+    "api_fallback_web_for": [],
+    "no_api_fallback_web_for": []
+  },
+  "summary": {
+    "total": 1,
+    "downloaded": 1,
+    "seconds": 5.5
+  },
+  "results": [
+    {
+      "title": "Flow-based Gaussian Splatting for Continuous-Scale Remote Sensing Image Super-Resolution",
+      "status": "open_access_downloaded",
+      "provider": "direct_url",
+      "accessMode": "open_access",
+      "ok": true,
+      "file": "Flow-based_Gaussian_Splatting_for_Continuous-Scale_Remote_Sensing_Image_Super-Resolution.pdf",
+      "bytes": 3487921,
+      "sha256": "491fec17c3ef9c73bd90e7d73dc7481dacc496a23698de9256ae889178c49ff7",
+      "contentType": "application/pdf",
+      "format": "pdf",
+      "source": "https://arxiv.org/pdf/2605.22147v1",
+      "si_requested": true,
+      "si": {
+        "status": "not_found",
+        "reason": "Checked arXiv abstract landing page, full HTML, and all 5 PDF pages; no separately linked or mentioned supplementary materials found. TeX source is not labelled SI.",
+        "checked_sources": [
+          "https://arxiv.org/abs/2605.22147",
+          "https://arxiv.org/html/2605.22147v1"
+        ]
+      },
+      "doi": "10.48550/arXiv.2605.22147",
+      "version": "v1",
+      "download_date": "2026-10-28T09:57:58.588469+08:00",
+      "verification": {
+        "pdf_signature": true,
+        "pages": 5,
+        "title_verified": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "input_resolution": [
+    256,
+    256
+  ],
+  "global_batch_size": 1,
+  "checkpoint_policy": "minimal",
+  "split_block": 4,
+  "dual_gpu_source_sha256": "aab6d244f42b9552e757c0b15d8c68d38302d2e5366ffe50537a51015e30bbde",
+  "checkpoint": 6000,
+  "outputs": [
+    {
+      "max_absolute": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "max_absolute": 0.0,
+      "relative_l2": 0.0
+    }
+  ],
+  "gradient_tensor_count": 1148,
+  "max_gradient_absolute_difference": 0.0,
+  "max_gradient_relative_l2_difference": 0.0,
+  "scope": "Generator forward and backward on the same real full-resolution input; renderer and optimizer checked separately."
+}

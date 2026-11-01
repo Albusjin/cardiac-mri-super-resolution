@@ -1,0 +1,12 @@
+{
+  "stage1": {
+    "training_settings_identical": true,
+    "architecture_identical": true,
+    "config_sha256": "02b79a240c5b0d0a13b66c9b9da04cc5b7e0bb91f118799a3fe064d3d3480bbf"
+  },
+  "stage2": {
+    "training_settings_identical": true,
+    "architecture_identical": true,
+    "config_sha256": "6e64d958c19eec136c03b129e8dc06310e544de5b264c9623574a35d8b724491"
+  }
+}

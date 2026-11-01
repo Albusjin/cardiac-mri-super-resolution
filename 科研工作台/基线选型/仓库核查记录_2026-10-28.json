@@ -1,0 +1,1040 @@
+{
+  "checked_on": "2026-10-28",
+  "additional_verified_file": {"repository":"Picsart-AI-Research/VideoINR-Continuous-Space-Time-Super-Resolution","path":"README.md","blob_sha":"cbc797306c584addb3b9621acc0bf8fff071f17e","url":"https://github.com/Picsart-AI-Research/VideoINR-Continuous-Space-Time-Super-Resolution/blob/810854719afb657cc2c2feb796b7b7199023ebb9/README.md"},
+  "timezone": "Asia/Shanghai",
+  "method": "GitHub connector GET only; default HEAD commit then recursive tree; selected source files pinned to returned SHA. Static audit only; no repository clone, imports, compilation, model download or execution.",
+  "repositories": [
+    {
+      "repository": "yinboc/liif",
+      "commit": "4c833f8f9d5d038df3ee2b50ebe649c30e628c0f",
+      "commit_date": "2021-08-21T17:43:06Z",
+      "tree_truncated": false,
+      "tree_entries": 77,
+      "tree_url": "https://api.github.com/repos/yinboc/liif/git/trees/4c833f8f9d5d038df3ee2b50ebe649c30e628c0f?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "LICENSE",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "configs",
+          "type": "tree"
+        },
+        {
+          "path": "datasets",
+          "type": "tree"
+        },
+        {
+          "path": "demo.py",
+          "type": "blob"
+        },
+        {
+          "path": "models",
+          "type": "tree"
+        },
+        {
+          "path": "scripts",
+          "type": "tree"
+        },
+        {
+          "path": "test.py",
+          "type": "blob"
+        },
+        {
+          "path": "train_liif.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils.py",
+          "type": "blob"
+        }
+      ],
+      "license_paths": [
+        "LICENSE"
+      ],
+      "inspected_files": [
+        {
+          "path": "models/liif.py",
+          "blob_sha": "11925bb4e52ba04c6f2df94caf6e09ad07c16be1",
+          "url": "https://github.com/yinboc/liif/blob/4c833f8f9d5d038df3ee2b50ebe649c30e628c0f/models/liif.py"
+        },
+        {
+          "path": "models/edsr.py",
+          "blob_sha": "965402a7055546228d05c8190182142ed877be6e",
+          "url": "https://github.com/yinboc/liif/blob/4c833f8f9d5d038df3ee2b50ebe649c30e628c0f/models/edsr.py"
+        },
+        {
+          "path": "datasets/wrappers.py",
+          "blob_sha": "8fb882a57badf71c68191433414398a0264675d7",
+          "url": "https://github.com/yinboc/liif/blob/4c833f8f9d5d038df3ee2b50ebe649c30e628c0f/datasets/wrappers.py"
+        },
+        {
+          "path": "configs/train-div2k/train_edsr-baseline-liif.yaml",
+          "blob_sha": "1d34f77a77898d21bcf53c7b51951d9bebb62975",
+          "url": "https://github.com/yinboc/liif/blob/4c833f8f9d5d038df3ee2b50ebe649c30e628c0f/configs/train-div2k/train_edsr-baseline-liif.yaml"
+        }
+      ]
+    },
+    {
+      "repository": "ChrisDud0257/GSASR",
+      "commit": "9d2eb64a51303ce7a22fd672197185488b38e10a",
+      "commit_date": "2025-08-06T08:50:20Z",
+      "tree_truncated": false,
+      "tree_entries": 295,
+      "tree_url": "https://api.github.com/repos/ChrisDud0257/GSASR/git/trees/9d2eb64a51303ce7a22fd672197185488b38e10a?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "LICENSE",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "TrainTestGSASR",
+          "type": "tree"
+        },
+        {
+          "path": "assets",
+          "type": "tree"
+        },
+        {
+          "path": "demo_gr.py",
+          "type": "blob"
+        },
+        {
+          "path": "inference_enhenced.py",
+          "type": "blob"
+        },
+        {
+          "path": "inference_paper.py",
+          "type": "blob"
+        },
+        {
+          "path": "inference_paper_benchmark.py",
+          "type": "blob"
+        },
+        {
+          "path": "setup_gscuda.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils",
+          "type": "tree"
+        }
+      ],
+      "license_paths": [
+        "LICENSE",
+        "TrainTestGSASR/LICENSE",
+        "TrainTestGSASR/LICENSE/LICENSE_BasicSR",
+        "TrainTestGSASR/LICENSE/LICENSE_HAT",
+        "TrainTestGSASR/LICENSE/LICENSE_ROPE-ViT",
+        "TrainTestGSASR/LICENSE/LICENSE_SwinIR",
+        "TrainTestGSASR/LICENSE/LICENSE_pytorch-image-models"
+      ],
+      "inspected_files": [
+        {
+          "path": "LICENSE",
+          "blob_sha": "2e2d2c308158fb26c2e0e031e0f61f27098e5cec",
+          "url": "https://github.com/ChrisDud0257/GSASR/blob/9d2eb64a51303ce7a22fd672197185488b38e10a/LICENSE"
+        },
+        {
+          "path": "TrainTestGSASR/README.md",
+          "blob_sha": "750c9c87fcc1575fc49cce80433e151096a597cf",
+          "url": "https://github.com/ChrisDud0257/GSASR/blob/9d2eb64a51303ce7a22fd672197185488b38e10a/TrainTestGSASR/README.md"
+        },
+        {
+          "path": "TrainTestGSASR/basicsr/models/gsasr_model.py",
+          "blob_sha": "25d47d6ed36df21d96a6b04ea3db6a1a2d070bcd",
+          "url": "https://github.com/ChrisDud0257/GSASR/blob/9d2eb64a51303ce7a22fd672197185488b38e10a/TrainTestGSASR/basicsr/models/gsasr_model.py"
+        },
+        {
+          "path": "TrainTestGSASR/basicsr/archs/fea2gs_arch.py",
+          "blob_sha": "0c7a761aed8e23abc4d33398206949647bcfacfd",
+          "url": "https://github.com/ChrisDud0257/GSASR/blob/9d2eb64a51303ce7a22fd672197185488b38e10a/TrainTestGSASR/basicsr/archs/fea2gs_arch.py"
+        },
+        {
+          "path": "TrainTestGSASR/basicsr/data/continuous_bicubic_downsample_dataset.py",
+          "blob_sha": "000d38a7e72491022624713ceea2b4c86d2fb5f1",
+          "url": "https://github.com/ChrisDud0257/GSASR/blob/9d2eb64a51303ce7a22fd672197185488b38e10a/TrainTestGSASR/basicsr/data/continuous_bicubic_downsample_dataset.py"
+        },
+        {
+          "path": "TrainTestGSASR/options/train/paper/train_GSASR_EDSR-Baseline_paper_bicubic_x1_4.yml",
+          "blob_sha": "02f1df085426498c25cc42759fa070560ba4f48b",
+          "url": "https://github.com/ChrisDud0257/GSASR/blob/9d2eb64a51303ce7a22fd672197185488b38e10a/TrainTestGSASR/options/train/paper/train_GSASR_EDSR-Baseline_paper_bicubic_x1_4.yml"
+        }
+      ]
+    },
+    {
+      "repository": "tljxyys/GaussianSR",
+      "commit": "ef5a38dcc5cff0c88766c6c93040bad57b994032",
+      "commit_date": "2024-12-28T02:56:26Z",
+      "tree_truncated": false,
+      "tree_entries": 46,
+      "tree_url": "https://api.github.com/repos/tljxyys/GaussianSR/git/trees/ef5a38dcc5cff0c88766c6c93040bad57b994032?recursive=1",
+      "root_entries": [
+        {
+          "path": "LICENSE",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "configs",
+          "type": "tree"
+        },
+        {
+          "path": "datasets",
+          "type": "tree"
+        },
+        {
+          "path": "fig",
+          "type": "tree"
+        },
+        {
+          "path": "models",
+          "type": "tree"
+        },
+        {
+          "path": "requirements.txt",
+          "type": "blob"
+        },
+        {
+          "path": "save",
+          "type": "tree"
+        },
+        {
+          "path": "scripts",
+          "type": "tree"
+        },
+        {
+          "path": "test.py",
+          "type": "blob"
+        },
+        {
+          "path": "train_gaussian.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils.py",
+          "type": "blob"
+        }
+      ],
+      "license_paths": [
+        "LICENSE"
+      ],
+      "inspected_files": []
+    },
+    {
+      "repository": "Qiuhai-CV/GaussM2ASR",
+      "commit": "2f0acd51d87520d2547303be4886e75d4898214c",
+      "commit_date": "2026-07-24T11:25:39Z",
+      "tree_truncated": false,
+      "tree_entries": 176,
+      "tree_url": "https://api.github.com/repos/Qiuhai-CV/GaussM2ASR/git/trees/2f0acd51d87520d2547303be4886e75d4898214c?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "LICENSE",
+          "type": "tree"
+        },
+        {
+          "path": "MANIFEST.in",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "VERSION",
+          "type": "blob"
+        },
+        {
+          "path": "basicsr",
+          "type": "tree"
+        },
+        {
+          "path": "make_setup.sh",
+          "type": "blob"
+        },
+        {
+          "path": "options",
+          "type": "tree"
+        },
+        {
+          "path": "requirements.txt",
+          "type": "blob"
+        },
+        {
+          "path": "scripts",
+          "type": "tree"
+        },
+        {
+          "path": "setup.cfg",
+          "type": "blob"
+        },
+        {
+          "path": "setup_basicsr.py",
+          "type": "blob"
+        },
+        {
+          "path": "setup_gscuda.py",
+          "type": "blob"
+        }
+      ],
+      "license_paths": [
+        "LICENSE",
+        "LICENSE/LICENSE_BasicSR",
+        "LICENSE/LICENSE_HAT",
+        "LICENSE/LICENSE_ROPE-ViT",
+        "LICENSE/LICENSE_SwinIR",
+        "LICENSE/LICENSE_pytorch-image-models"
+      ],
+      "inspected_files": [
+        {
+          "path": "basicsr/archs/gaussm2asr_arch.py",
+          "blob_sha": "e12d8937e8e5771446096a3fb76a5fd2745b4135",
+          "url": "https://github.com/Qiuhai-CV/GaussM2ASR/blob/2f0acd51d87520d2547303be4886e75d4898214c/basicsr/archs/gaussm2asr_arch.py"
+        }
+      ]
+    },
+    {
+      "repository": "mulkkog/GRAPE",
+      "commit": "2137dabd627fc2bc9d3743a07acfcf1060b4b00c",
+      "commit_date": "2026-03-10T19:39:43Z",
+      "tree_truncated": false,
+      "tree_entries": 1721,
+      "tree_url": "https://api.github.com/repos/mulkkog/GRAPE/git/trees/2137dabd627fc2bc9d3743a07acfcf1060b4b00c?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "configs",
+          "type": "tree"
+        },
+        {
+          "path": "datasets",
+          "type": "tree"
+        },
+        {
+          "path": "demo.py",
+          "type": "blob"
+        },
+        {
+          "path": "grape.yml",
+          "type": "blob"
+        },
+        {
+          "path": "gsplat",
+          "type": "tree"
+        },
+        {
+          "path": "models",
+          "type": "tree"
+        },
+        {
+          "path": "requirements.txt",
+          "type": "blob"
+        },
+        {
+          "path": "test.py",
+          "type": "blob"
+        },
+        {
+          "path": "test_fps.py",
+          "type": "blob"
+        },
+        {
+          "path": "train.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils.py",
+          "type": "blob"
+        }
+      ],
+      "license_paths": [
+        "gsplat/LICENSE",
+        "gsplat/gsplat/cuda/csrc/third_party/glm/copying.txt"
+      ],
+      "inspected_files": [
+        {
+          "path": "configs/train/edsr_256/train-edsr+grape.yaml",
+          "blob_sha": "07f8d140a634a932b931509a73d6e445faee9233",
+          "url": "https://github.com/mulkkog/GRAPE/blob/2137dabd627fc2bc9d3743a07acfcf1060b4b00c/configs/train/edsr_256/train-edsr+grape.yaml"
+        },
+        {
+          "path": "models/my_sr.py",
+          "blob_sha": "296ff6197c2d88645e7c52a6a086c992fc0ab5ea",
+          "url": "https://github.com/mulkkog/GRAPE/blob/2137dabd627fc2bc9d3743a07acfcf1060b4b00c/models/my_sr.py"
+        }
+      ]
+    },
+    {
+      "repository": "Picsart-AI-Research/VideoINR-Continuous-Space-Time-Super-Resolution",
+      "commit": "810854719afb657cc2c2feb796b7b7199023ebb9",
+      "commit_date": "2022-10-09T19:01:52Z",
+      "tree_truncated": false,
+      "tree_entries": 64,
+      "tree_url": "https://api.github.com/repos/Picsart-AI-Research/VideoINR-Continuous-Space-Time-Super-Resolution/git/trees/810854719afb657cc2c2feb796b7b7199023ebb9?recursive=1",
+      "root_entries": [
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "data",
+          "type": "tree"
+        },
+        {
+          "path": "demo.py",
+          "type": "blob"
+        },
+        {
+          "path": "generate_frames_from_adobe240fps.py",
+          "type": "blob"
+        },
+        {
+          "path": "images",
+          "type": "tree"
+        },
+        {
+          "path": "meta_info",
+          "type": "tree"
+        },
+        {
+          "path": "models",
+          "type": "tree"
+        },
+        {
+          "path": "options",
+          "type": "tree"
+        },
+        {
+          "path": "train.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils",
+          "type": "tree"
+        }
+      ],
+      "license_paths": [
+        "models/modules/DCNv2/LICENSE"
+      ],
+      "inspected_files": [
+        {
+          "path": "options/train/train_zsm.yml",
+          "blob_sha": "b112b883fab2008cb473ad456c75b253d915b480",
+          "url": "https://github.com/Picsart-AI-Research/VideoINR-Continuous-Space-Time-Super-Resolution/blob/810854719afb657cc2c2feb796b7b7199023ebb9/options/train/train_zsm.yml"
+        }
+      ]
+    },
+    {
+      "repository": "MICV-Lab/STADNet",
+      "commit": "0f6b08de507743564eecb97f55b190200c0fa8db",
+      "commit_date": "2024-09-13T02:30:00Z",
+      "tree_truncated": false,
+      "tree_entries": 503,
+      "tree_url": "https://api.github.com/repos/MICV-Lab/STADNet/git/trees/0f6b08de507743564eecb97f55b190200c0fa8db?recursive=1",
+      "root_entries": [
+        {
+          "path": "Framework.png",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "datasets",
+          "type": "tree"
+        },
+        {
+          "path": "get_data_list.py",
+          "type": "blob"
+        },
+        {
+          "path": "matlab_m",
+          "type": "tree"
+        },
+        {
+          "path": "mmedit",
+          "type": "tree"
+        },
+        {
+          "path": "models",
+          "type": "tree"
+        },
+        {
+          "path": "networks",
+          "type": "tree"
+        },
+        {
+          "path": "plot_loss.py",
+          "type": "blob"
+        },
+        {
+          "path": "plot_psnr.py",
+          "type": "blob"
+        },
+        {
+          "path": "print_out.npy",
+          "type": "blob"
+        },
+        {
+          "path": "show_comp_img.m",
+          "type": "blob"
+        },
+        {
+          "path": "test_acdc.py",
+          "type": "blob"
+        },
+        {
+          "path": "test_demo.py",
+          "type": "blob"
+        },
+        {
+          "path": "train_acdc.py",
+          "type": "blob"
+        },
+        {
+          "path": "train_demo.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils",
+          "type": "tree"
+        }
+      ],
+      "license_paths": [
+        "utils/yaml/java/LICENSE-2.0.txt"
+      ],
+      "inspected_files": [
+        {
+          "path": "train_acdc.py",
+          "blob_sha": "fa6c70ebbb425d46ef6af62015f673704006d8da",
+          "url": "https://github.com/MICV-Lab/STADNet/blob/0f6b08de507743564eecb97f55b190200c0fa8db/train_acdc.py"
+        },
+        {
+          "path": "datasets/cartesian_dataset.py",
+          "blob_sha": "4954940919647331b204021b35177586a6e66c86",
+          "url": "https://github.com/MICV-Lab/STADNet/blob/0f6b08de507743564eecb97f55b190200c0fa8db/datasets/cartesian_dataset.py"
+        }
+      ]
+    },
+    {
+      "repository": "ohayonguy/PMRF",
+      "commit": "b6f16a41af45646a6a726f4fd55459b382594633",
+      "commit_date": "2025-02-05T08:32:35Z",
+      "tree_truncated": false,
+      "tree_entries": 106,
+      "tree_url": "https://api.github.com/repos/ohayonguy/PMRF/git/trees/b6f16a41af45646a6a726f4fd55459b382594633?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "LICENSE",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "arch",
+          "type": "tree"
+        },
+        {
+          "path": "assets",
+          "type": "tree"
+        },
+        {
+          "path": "checkpoints",
+          "type": "tree"
+        },
+        {
+          "path": "evaluation",
+          "type": "tree"
+        },
+        {
+          "path": "inference.py",
+          "type": "blob"
+        },
+        {
+          "path": "inference.sh",
+          "type": "blob"
+        },
+        {
+          "path": "install.sh",
+          "type": "blob"
+        },
+        {
+          "path": "lightning_models",
+          "type": "tree"
+        },
+        {
+          "path": "scripts",
+          "type": "tree"
+        },
+        {
+          "path": "test.py",
+          "type": "blob"
+        },
+        {
+          "path": "test.sh",
+          "type": "blob"
+        },
+        {
+          "path": "torch_datasets",
+          "type": "tree"
+        },
+        {
+          "path": "train.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils",
+          "type": "tree"
+        }
+      ],
+      "license_paths": [
+        "LICENSE"
+      ],
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "5068e81871c1fcdef012bd181e9ce580a23c1eb9",
+          "url": "https://github.com/ohayonguy/PMRF/blob/b6f16a41af45646a6a726f4fd55459b382594633/README.md"
+        },
+        {
+          "path": "inference.py",
+          "blob_sha": "6cddd34dbaa428434516aedce03604aafbfe2f65",
+          "url": "https://github.com/ohayonguy/PMRF/blob/b6f16a41af45646a6a726f4fd55459b382594633/inference.py"
+        },
+        {
+          "path": "lightning_models/mmse_rectified_flow.py",
+          "blob_sha": "51b7b0d5d9f3deceb3ea89352a828c1705042244",
+          "url": "https://github.com/ohayonguy/PMRF/blob/b6f16a41af45646a6a726f4fd55459b382594633/lightning_models/mmse_rectified_flow.py"
+        },
+        {
+          "path": "utils/create_degradation.py",
+          "blob_sha": "6281466f5ea1078bc4c256e6c880276d54175135",
+          "url": "https://github.com/ohayonguy/PMRF/blob/b6f16a41af45646a6a726f4fd55459b382594633/utils/create_degradation.py"
+        },
+        {
+          "path": "scripts/train/controlled_experiments/super_resolution/train_pmrf.sh",
+          "blob_sha": "84608a0e6a06472a9d07f86c4c61054dae3f37a8",
+          "url": "https://github.com/ohayonguy/PMRF/blob/b6f16a41af45646a6a726f4fd55459b382594633/scripts/train/controlled_experiments/super_resolution/train_pmrf.sh"
+        },
+        {
+          "path": "scripts/train/controlled_experiments/super_resolution/train_posterior_conditioned_on_y.sh",
+          "blob_sha": "838d6089b4e35e607dd73142ad0a3c11ff6817b8",
+          "url": "https://github.com/ohayonguy/PMRF/blob/b6f16a41af45646a6a726f4fd55459b382594633/scripts/train/controlled_experiments/super_resolution/train_posterior_conditioned_on_y.sh"
+        }
+      ]
+    },
+    {
+      "repository": "jiaqixuac/FlowSR",
+      "commit": "afe123918eb525c361ebf7249ce1168cfdc72123",
+      "commit_date": "2026-06-01T09:01:52Z",
+      "tree_truncated": false,
+      "tree_entries": 11,
+      "tree_url": "https://api.github.com/repos/jiaqixuac/FlowSR/git/trees/afe123918eb525c361ebf7249ce1168cfdc72123?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "LICENSE",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "assets",
+          "type": "tree"
+        }
+      ],
+      "license_paths": [
+        "LICENSE"
+      ],
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "9a249223af43d32cd4615729953e21ea1ce39fda",
+          "url": "https://github.com/jiaqixuac/FlowSR/blob/afe123918eb525c361ebf7249ce1168cfdc72123/README.md"
+        }
+      ]
+    },
+    {
+      "repository": "springXIACJ/FlowSR",
+      "commit": "34524ca12ada52833506447704a116b62416acbe",
+      "commit_date": "2026-06-01T12:43:39Z",
+      "tree_truncated": false,
+      "tree_entries": 17,
+      "tree_url": "https://api.github.com/repos/springXIACJ/FlowSR/git/trees/34524ca12ada52833506447704a116b62416acbe?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "LICENSE",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "assets",
+          "type": "tree"
+        },
+        {
+          "path": "flowsr",
+          "type": "tree"
+        },
+        {
+          "path": "pyproject.toml",
+          "type": "blob"
+        },
+        {
+          "path": "tests",
+          "type": "tree"
+        }
+      ],
+      "license_paths": [
+        "LICENSE"
+      ],
+      "inspected_files": []
+    },
+    {
+      "repository": "Faze-Hsw/RFMSR",
+      "commit": "3e4479837cbc2e731f19e96e5e306adb66b28a77",
+      "commit_date": "2026-10-15T04:31:01Z",
+      "tree_truncated": false,
+      "tree_entries": 1275,
+      "tree_url": "https://api.github.com/repos/Faze-Hsw/RFMSR/git/trees/3e4479837cbc2e731f19e96e5e306adb66b28a77?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "LICENSE",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "assets",
+          "type": "tree"
+        },
+        {
+          "path": "configs",
+          "type": "tree"
+        },
+        {
+          "path": "datapipe",
+          "type": "tree"
+        },
+        {
+          "path": "infer_rfmsr.py",
+          "type": "blob"
+        },
+        {
+          "path": "models",
+          "type": "tree"
+        },
+        {
+          "path": "outputs",
+          "type": "tree"
+        },
+        {
+          "path": "requirements.txt",
+          "type": "blob"
+        },
+        {
+          "path": "testdata",
+          "type": "tree"
+        },
+        {
+          "path": "train_rfmsr.py",
+          "type": "blob"
+        },
+        {
+          "path": "train_rfmsr_os.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils",
+          "type": "tree"
+        }
+      ],
+      "license_paths": [
+        "LICENSE"
+      ],
+      "inspected_files": [
+        {
+          "path": "configs/train_rfmsr.yaml",
+          "blob_sha": "0ee2c2ad72c95b1276f2dcc090ead88ef4cf8f1d",
+          "url": "https://github.com/Faze-Hsw/RFMSR/blob/3e4479837cbc2e731f19e96e5e306adb66b28a77/configs/train_rfmsr.yaml"
+        },
+        {
+          "path": "configs/train_rfmsr_os.yaml",
+          "blob_sha": "ade255a41df919ab6d466de15ee7e66242ab2f6e",
+          "url": "https://github.com/Faze-Hsw/RFMSR/blob/3e4479837cbc2e731f19e96e5e306adb66b28a77/configs/train_rfmsr_os.yaml"
+        },
+        {
+          "path": "configs/rfmsr.yaml",
+          "blob_sha": "91f829791320e9329f6ca2b5fd9ae0bb64808654",
+          "url": "https://github.com/Faze-Hsw/RFMSR/blob/3e4479837cbc2e731f19e96e5e306adb66b28a77/configs/rfmsr.yaml"
+        },
+        {
+          "path": "models/rfmsr.py",
+          "blob_sha": "480a35d6884d94645ef89662bce07382ba955c5f",
+          "url": "https://github.com/Faze-Hsw/RFMSR/blob/3e4479837cbc2e731f19e96e5e306adb66b28a77/models/rfmsr.py"
+        },
+        {
+          "path": "infer_rfmsr.py",
+          "blob_sha": "c4fdf35333aec2ed33571a388d6658b29738d986",
+          "url": "https://github.com/Faze-Hsw/RFMSR/blob/3e4479837cbc2e731f19e96e5e306adb66b28a77/infer_rfmsr.py"
+        }
+      ]
+    },
+    {
+      "repository": "Gsunshine/meanflow",
+      "commit": "d70cb55d298ee03c53bf6da67bec281082e4e2d9",
+      "commit_date": "2026-03-13T05:29:12Z",
+      "tree_truncated": false,
+      "tree_entries": 39,
+      "tree_url": "https://api.github.com/repos/Gsunshine/meanflow/git/trees/d70cb55d298ee03c53bf6da67bec281082e4e2d9?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "LICENSE",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "assets",
+          "type": "tree"
+        },
+        {
+          "path": "configs",
+          "type": "tree"
+        },
+        {
+          "path": "main.py",
+          "type": "blob"
+        },
+        {
+          "path": "meanflow.py",
+          "type": "blob"
+        },
+        {
+          "path": "models",
+          "type": "tree"
+        },
+        {
+          "path": "prepare_dataset.py",
+          "type": "blob"
+        },
+        {
+          "path": "scripts",
+          "type": "tree"
+        },
+        {
+          "path": "train.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils",
+          "type": "tree"
+        }
+      ],
+      "license_paths": [
+        "LICENSE"
+      ],
+      "inspected_files": [
+        {
+          "path": "meanflow.py",
+          "blob_sha": "3332ee76c057f67962653f1460465c84ce6c9836",
+          "url": "https://github.com/Gsunshine/meanflow/blob/d70cb55d298ee03c53bf6da67bec281082e4e2d9/meanflow.py"
+        }
+      ]
+    },
+    {
+      "repository": "OmerTaub/ENGRF",
+      "commit": "b738125eaa07143b377b73598fdc250dbc9e018c",
+      "commit_date": "2026-08-12T10:23:42Z",
+      "tree_truncated": false,
+      "tree_entries": 72,
+      "tree_url": "https://api.github.com/repos/OmerTaub/ENGRF/git/trees/b738125eaa07143b377b73598fdc250dbc9e018c?recursive=1",
+      "root_entries": [
+        {
+          "path": ".gitignore",
+          "type": "blob"
+        },
+        {
+          "path": "LICENSE",
+          "type": "blob"
+        },
+        {
+          "path": "README.md",
+          "type": "blob"
+        },
+        {
+          "path": "ReconFormer",
+          "type": "tree"
+        },
+        {
+          "path": "data",
+          "type": "tree"
+        },
+        {
+          "path": "evaluation",
+          "type": "tree"
+        },
+        {
+          "path": "model",
+          "type": "tree"
+        },
+        {
+          "path": "requirements.txt",
+          "type": "blob"
+        },
+        {
+          "path": "scripts",
+          "type": "tree"
+        },
+        {
+          "path": "train_fastmri_pmrf.py",
+          "type": "blob"
+        },
+        {
+          "path": "visualizations",
+          "type": "tree"
+        }
+      ],
+      "license_paths": [
+        "LICENSE",
+        "ReconFormer/LICENSE",
+        "model/LICENSE"
+      ],
+      "inspected_files": [
+        {
+          "path": "README.md",
+          "blob_sha": "174e8a20c8d886a6b002f1d4dc428ee72bb8b6bd",
+          "url": "https://github.com/OmerTaub/ENGRF/blob/b738125eaa07143b377b73598fdc250dbc9e018c/README.md"
+        },
+        {
+          "path": "scripts/train_flow_4acc_reconformer_mmse.sh",
+          "blob_sha": "bd34e1dd6d6b28f19cba970740cc1ef479bf2ae4",
+          "url": "https://github.com/OmerTaub/ENGRF/blob/b738125eaa07143b377b73598fdc250dbc9e018c/scripts/train_flow_4acc_reconformer_mmse.sh"
+        }
+      ]
+    },
+    {
+      "repository": "SMILE-Lab-ShanghaiTech/ArSSR",
+      "commit": "9c015f716b4f2e39a943a7ac99a8918e6c4ca578",
+      "commit_date": "2022-07-15T15:29:31Z",
+      "tree_truncated": false,
+      "tree_entries": 23,
+      "tree_url": "https://api.github.com/repos/SMILE-Lab-ShanghaiTech/ArSSR/git/trees/9c015f716b4f2e39a943a7ac99a8918e6c4ca578?recursive=1",
+      "root_entries": [
+        {
+          "path": ".idea",
+          "type": "tree"
+        },
+        {
+          "path": "Readme.md",
+          "type": "blob"
+        },
+        {
+          "path": "data.py",
+          "type": "blob"
+        },
+        {
+          "path": "decoder.py",
+          "type": "blob"
+        },
+        {
+          "path": "encoder.py",
+          "type": "blob"
+        },
+        {
+          "path": "fig",
+          "type": "tree"
+        },
+        {
+          "path": "model.py",
+          "type": "blob"
+        },
+        {
+          "path": "pre_trained_models",
+          "type": "tree"
+        },
+        {
+          "path": "test.py",
+          "type": "blob"
+        },
+        {
+          "path": "train.py",
+          "type": "blob"
+        },
+        {
+          "path": "utils.py",
+          "type": "blob"
+        }
+      ],
+      "license_paths": [],
+      "inspected_files": [
+        {
+          "path": "train.py",
+          "blob_sha": "b7762ee669aa78a87327aed38268b5e6f5ca9696",
+          "url": "https://github.com/SMILE-Lab-ShanghaiTech/ArSSR/blob/9c015f716b4f2e39a943a7ac99a8918e6c4ca578/train.py"
+        }
+      ]
+    }
+  ]
+}

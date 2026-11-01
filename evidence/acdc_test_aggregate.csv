@@ -1,0 +1,9 @@
+method,psnr_db,ssim
+fourier_input,24.496,0.68802
+ixi_direct_transfer,25.066,0.73607
+single_frame_seed16,26.144,0.78112
+unaligned_multiframe_seed16,26.147,0.78124
+aligned_multiframe_seed16,26.145,0.78115
+aligned_temporal_seed16,26.147,0.78099
+single_frame_seed17,26.155,0.78178
+aligned_temporal_seed17,26.154,0.78163
